@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="B.廢文大資料 miningDescription給定一個序列 $a_i$ ，問有多少區間 $[l,r]$ 使得存在一個 $m \leq r$ 滿足 $\sum\limits_{i&#x3D;l}^m a_i &amp;lt; 0$？ Solution先對 $a_i$ 做前綴 $s_k &#x3D; \sum\limits_{i&#x3D;1}^k a_i$對於一個固定的 $l$ 來說，題目等價於找到一個最小的 $m$ 使得 $s_m">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-06T05:27:16.211Z">
+<meta property="og:updated_time" content="2019-12-06T05:49:18.773Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -47,7 +47,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -143,7 +144,7 @@
   <div class="content" itemprop="articleBody">
     <h1 id="B-廢文大資料-mining"><a href="#B-廢文大資料-mining" class="headerlink" title="B.廢文大資料 mining"></a>B.廢文大資料 mining</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定一個序列 $a_i$ ，問有多少區間 $[l,r]$ 使得存在一個 $m \leq r$ 滿足 $\sum\limits_{i=l}^m a_i &lt; 0$？</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先對 $a_i$ 做前綴 $s_k = \sum\limits_{i=1}^k a_i$<br>對於一個固定的 $l$ 來說，題目等價於找到一個最小的 $m$ 使得 $s_m - s_{l-1} &lt; 0$<br>在 $m$ 之後的 $r$ 都會被算在答案裡面</p>
-<p>可以用單調隊列幫每個 $i$ 找到最小的 $i’$ 使得 $s_{i’} &lt; s_i$ ，複雜度 $O(n)$</p>
+<p>可以用單調隊列幫每個 $i$ 找到最小的 $i’$ 使得 $s_{i’} &lt; s_i$ ，複雜度 $\mathcal{O}(n)$</p>
 <h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000025</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,a[N],stk[N],p,R[N];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] += a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="comment">//for(int i = 0; i &lt;= n; i++) cout &lt;&lt; v[i] &lt;&lt; ' '; cout &lt;&lt; '\n';</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">while</span>(p &amp;&amp; a[stk[p<span class="number">-1</span>]] &gt;= a[i]) --p;</span><br><span class="line">        R[i] = (p ? stk[p<span class="number">-1</span>]<span class="number">-1</span> : n) - i;</span><br><span class="line">        stk[p++] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) sum += R[i];</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n*(n+<span class="number">1</span>)/<span class="number">2</span> - sum &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -283,26 +284,8 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

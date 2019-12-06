@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="Author: Sean LiuD.番茄大戰爭Description兩個人在玩剪刀石頭布，而他們兩個人玩了$T$個回合。兩個人（此處稱為小奕和小安）各自有一個「策略」，分別為兩個字串$A$和$B$。兩個字串皆由R、P、S三個字元組成，分別代表小奕和小安會出石頭、布、剪刀。兩個人都會根據他們的「策略」出題，在第$i$個回合，小奕將會出$A_{i \mod {|A|}}$，而小安將出$B_{i \mo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-06T03:04:57.194Z">
+<meta property="og:updated_time" content="2019-12-06T05:49:07.286Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -47,7 +47,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -145,8 +146,8 @@
   <div class="content" itemprop="articleBody">
     <h3 id="Author-Sean-Liu"><a href="#Author-Sean-Liu" class="headerlink" title="Author: Sean Liu"></a>Author: Sean Liu</h3><h1 id="D-番茄大戰爭"><a href="#D-番茄大戰爭" class="headerlink" title="D.番茄大戰爭"></a>D.番茄大戰爭</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>兩個人在玩剪刀石頭布，而他們兩個人玩了$T$個回合。兩個人（此處稱為小奕和小安）各自有一個「策略」，分別為兩個字串$A$和$B$。兩個字串皆由<code>R</code>、<code>P</code>、<code>S</code>三個字元組成，分別代表小奕和小安會出石頭、布、剪刀。兩個人都會根據他們的「策略」出題，在第$i$個回合，小奕將會出$A_{i \mod {|A|}}$，而小安將出$B_{i \mod{|B|}}$，從$i = 0$開始。請輸出：經過$T$個回合後，兩人分別贏了幾局，平手了幾局。</p>
 <p>保證滿足：$1 \leq T \leq 10^9$，$1 \leq |A|, |B| \leq 10^6$，且$A, B$由<code>R</code>、<code>P</code>、<code>S</code>三個字元組成。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先，看到$1 \leq T \leq 10^9$當然想說直接給他寫個$O(T)$，寫了五分鐘之後傳上去——AC——了前幾筆，之後就TLE了。所以，當然就來想怪做法嘍！ </p>
-<p>先假設$|A| \leq |B|$。第一個想法就是，對於$A$裏頭的每一個字元$A_i$，我都看一次我會遇到哪些字元（$B_i, B_{i + |A|}, B_{i + 2\times|A|}, \dots$，也就是所有滿足$(i + k|A|) \mod{|B|} \leq T$的$B_{(i + k|A|)\mod{|B|}}$，然後再$O(1)$更新答案。這樣複雜度依然為$O(T)$，因為還是每一個時間點都有戳到一次，只是改變順序而已了。不過！這個順序很重要，因為可以優化！</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先，看到$1 \leq T \leq 10^9$當然想說直接給他寫個$\mathcal{O}(T)$，寫了五分鐘之後傳上去——AC——了前幾筆，之後就TLE了。所以，當然就來想怪做法嘍！ </p>
+<p>先假設$|A| \leq |B|$。第一個想法就是，對於$A$裏頭的每一個字元$A_i$，我都看一次我會遇到哪些字元（$B_i, B_{i + |A|}, B_{i + 2\times|A|}, \dots$，也就是所有滿足$(i + k|A|) \mod{|B|} \leq T$的$B_{(i + k|A|)\mod{|B|}}$，然後再$\mathcal{O}(1)$更新答案。這樣複雜度依然為$\mathcal{O}(T)$，因為還是每一個時間點都有戳到一次，只是改變順序而已了。不過！這個順序很重要，因為可以優化！</p>
 <p>若我們看$A_i$，我們先考慮它會遇到那些$B$的字元<script type="math/tex">B_i, B_{i + |A|}, B_{i + 2\times|A|}, \dots</script>，也就是所有的$B_{i + k|A| \mod{|B|}}$。可以知道，這樣分可以將$B$的所有字元分成若干個相斥的群組$G_t$！具體做法就是，先看$A_i$，如果$B_i$尚未在一個群組裡面，就創立一個新的群組然後將所有的$B_{i + k|A|}$加進去這個群組裡面。現在，就想要用這個新的資料儲存方式來加快我們的運算。</p>
 <p>同樣的，我們將注意力集中於$A$的字元$A_i$。如果知道這個字元會被掃到幾次（假設是$k$），那是不是可以從$B_i$在其所屬的群組$G$的位子開始爬$k$次（超過邊界就回到$0$）來計算？這樣就會有累加的感覺了，所以下一步就是——對各個群組計算其各個出法（剪刀石頭布）的前綴！所以，我們可以定義$S(i, j, k)$為第$i$個群組中，符號為$j$（以$0,1,2$表示，對應到剪刀石頭布各一），前$k$個位置的前綴和。</p>
 <p>大致的想法知道了，就可以開始去處理細節了！這題細節頗多，彷彿魚刺，得小心！不過，越多魚刺的魚往往更為鮮甜，勿以此而退縮！</p>
@@ -289,26 +290,8 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
