@@ -16,7 +16,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;perfect.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;arbitrary.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;lazyprop.png">
-<meta property="og:updated_time" content="2019-12-08T15:52:52.218Z">
+<meta property="og:updated_time" content="2019-12-08T16:07:51.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;perfect.png">
     
@@ -50,7 +50,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -197,6 +198,7 @@
 <h3 id="區間和"><a href="#區間和" class="headerlink" title="區間和"></a>區間和</h3><p>有人可能想到了，有些懶標操作需要區間長度，例如區間加值區間和，怎麼辦呢?<br>所有節點代表的區間長度都是2的冪次，也和它與葉子的距離有關<br>只需修改一下便可</p>
 <p>以下順便附上完整的區間加值區間和的程式碼，以筆者習慣的風格撰寫<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">200000</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segtree</span> &#123;</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum[N&lt;&lt;<span class="number">1</span>], tag[N], n;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">long</span> <span class="keyword">long</span> d, <span class="keyword">int</span> h)</span> </span>&#123;</span><br><span class="line">        sum[p] += d&lt;&lt;h;</span><br><span class="line">        <span class="keyword">if</span>(p &lt; n) tag[p] += d;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pull</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> h=<span class="number">1</span>; p&gt;<span class="number">1</span>; p&gt;&gt;=<span class="number">1</span>, h++) sum[p&gt;&gt;<span class="number">1</span>] = sum[p^<span class="number">1</span>]+sum[p] + (tag[p&gt;&gt;<span class="number">1</span>]&lt;&lt;h);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> h = __lg(n); h &gt;= <span class="number">0</span>; h--) &#123;</span><br><span class="line">            <span class="keyword">int</span> i = p&gt;&gt;h;</span><br><span class="line">            <span class="keyword">if</span>(!tag[i&gt;&gt;<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">            upd(i,tag[i&gt;&gt;<span class="number">1</span>],h);</span><br><span class="line">            upd(i^<span class="number">1</span>,tag[i&gt;&gt;<span class="number">1</span>],h);</span><br><span class="line">            tag[i&gt;&gt;<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">long</span> <span class="keyword">long</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tl = l, tr = r, h = <span class="number">0</span>;</span><br><span class="line">        push(l+n), push(r<span class="number">-1</span>+n);</span><br><span class="line">        <span class="keyword">for</span>(l+=n, r+=n; l&lt;r; l&gt;&gt;=<span class="number">1</span>, r&gt;&gt;=<span class="number">1</span>, h++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(l&amp;<span class="number">1</span>) upd(l++,k,h);</span><br><span class="line">            <span class="keyword">if</span>(r&amp;<span class="number">1</span>) upd(--r,k,h);</span><br><span class="line">        &#125;</span><br><span class="line">        pull(tl+n), pull(tr<span class="number">-1</span>+n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123; <span class="comment">// [l,r)</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">        push(l+n), push(r<span class="number">-1</span>+n);</span><br><span class="line">        <span class="keyword">for</span>(l+=n, r+=n; l&lt;r; l&gt;&gt;=<span class="number">1</span>, r&gt;&gt;=<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(l&amp;<span class="number">1</span>) res += sum[l++];</span><br><span class="line">            <span class="keyword">if</span>(r&amp;<span class="number">1</span>) res += sum[--r];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> v[],<span class="keyword">int</span> _n)</span> </span>&#123;</span><br><span class="line">        n = _n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) sum[i+n] = v[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = n<span class="number">-1</span>; i &gt; <span class="number">0</span>; i--) sum[i] = sum[i&lt;&lt;<span class="number">1</span>]+sum[i&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; sgt;</span><br></pre></td></tr></table></figure></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://codeforces.com/blog/entry/18051" target="_blank" rel="noopener">https://codeforces.com/blog/entry/18051</a></p>
+<p>寫這篇好久ㄛ，本來想寫全國模擬賽的題解，不過既然學長都給了我還是算了吧(汗)</p>
 
   </div>
 </article>
@@ -335,26 +337,8 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
