@@ -16,7 +16,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;perfect.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;arbitrary.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;lazyprop.png">
-<meta property="og:updated_time" content="2019-12-08T16:07:51.185Z">
+<meta property="og:updated_time" content="2019-12-09T07:37:52.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;Iterative-SegmentTree&#x2F;perfect.png">
     
@@ -157,7 +157,7 @@
 <li>首先 <code>l+=n, r+=n</code> 從最下面那層開始</li>
 <li>重複執行直到區間為空(<code>l&gt;=r</code>)<ul>
 <li>如果 <code>l</code> 是他父親的右子樹，則必須取走編號 <code>l</code> 的節點，並將 <code>l</code> 在該層往右一格</li>
-<li>如果 <code>r</code> 是他父親的左子樹，則必須取走編號 <code>r-1</code> 的節點，並將 <code>r</code> 在該層往左一格</li>
+<li>如果 <code>r-1</code> 是他父親的左子樹，則必須取走編號 <code>r-1</code> 的節點，並將 <code>r</code> 在該層往左一格</li>
 <li>把 <code>l,r</code> 都往上提升一層</li>
 </ul>
 </li>
@@ -183,7 +183,7 @@
 <h3 id="Helper-Methods"><a href="#Helper-Methods" class="headerlink" title="Helper Methods"></a>Helper Methods</h3><p>區間修改時，我們就在存取到的那些節點的答案和懶標都加上$x$，因此有了</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    tr[p] += x;</span><br><span class="line">    <span class="keyword">if</span>(p &lt; n) tag[p] += x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/Iterative-SegmentTree/lazyprop.png" alt=""></p>
-<p>再看一次這張圖，可以想像有兩條分別通過 <code>l</code> 和 <code>r-1</code> 的垂直線，通過這條線的節點是懶標會影響到目前區間答案的節點，所以必須把懶標往下傳<br>順序要由上而下，把 <code>p</code> 的祖先節點的懶標往下推<br>細節請看code</p>
+<p>再看一次這張圖，可以想像有兩條分別通過 <code>l</code> 和 <code>r-1</code> 的垂直線，這條線通過的節點是懶標會影響到目前區間答案的節點，所以必須把懶標往下傳<br>順序要由上而下，把 <code>p</code> 的祖先節點的懶標往下推<br>細節請看code</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> h = __lg(n); h &gt;= <span class="number">0</span>; h--) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = p&gt;&gt;h; <span class="comment">// hth ancestor of p</span></span><br><span class="line">        <span class="keyword">if</span>(!tag[i&gt;&gt;<span class="number">1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">        upd(i, tag[i&gt;&gt;<span class="number">1</span>]);</span><br><span class="line">        upd(i^<span class="number">1</span>, tag[i&gt;&gt;<span class="number">1</span>]);</span><br><span class="line">        tag[i&gt;&gt;<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另外修改之後也同樣需要對 <code>l</code> 和 <code>r-1</code> 的祖先 <code>pull</code> ，順序要由下而上</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pull</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(p &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// do not forget the tag[p&gt;&gt;1] term</span></span><br><span class="line">        tr[p&gt;&gt;<span class="number">1</span>] = max(tr[p],tr[p^<span class="number">1</span>])+tag[p&gt;&gt;<span class="number">1</span>];</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
