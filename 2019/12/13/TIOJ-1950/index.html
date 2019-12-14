@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="小向的試煉 2-3：轉！(Rotate!)Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到">
+<meta name="keywords" content="TIOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1950">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;13&#x2F;TIOJ-1950&#x2F;index.html">
+<meta property="og:site_name" content="蛋餅的競程隨筆">
+<meta property="og:description" content="小向的試煉 2-3：轉！(Rotate!)Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1950&#x2F;cycles.png">
+<meta property="og:updated_time" content="2019-12-14T16:08:44.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1950&#x2F;cycles.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIOJ-1950</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/14/TIOJ-1171-LCT/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/12/13/TIOJ-1394/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/13/TIOJ-1950/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/13/TIOJ-1950/&text=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/13/TIOJ-1950/&is_video=false&description=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1950&body=Check out this article: http://yoursite.com/2019/12/13/TIOJ-1950/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/13/TIOJ-1950/&name=TIOJ-1950&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/13/TIOJ-1950/&t=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小向的試煉-2-3：轉！-Rotate"><span class="toc-number">1.</span> <span class="toc-text">小向的試煉 2-3：轉！(Rotate!)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIOJ-1950
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">蛋餅的競程隨筆</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-13T15:26:11.000Z" itemprop="datePublished">2019-12-13</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIOJ/" rel="tag">TIOJ</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="小向的試煉-2-3：轉！-Rotate"><a href="#小向的試煉-2-3：轉！-Rotate" class="headerlink" title="小向的試煉 2-3：轉！(Rotate!)"></a>小向的試煉 2-3：轉！(Rotate!)</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」<br>另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法<br>每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到位置$x$的地方，再繼續對原本放在位置$x$的地方的數字做同樣的事<br>可以發現這樣會形成好幾個「環」，例如範測的$(1, 4, 2, 5, 3)$會形成兩個環</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+1
+\end{pmatrix}
+\begin{pmatrix}
+4 & 5 & 3 & 2
+\end{pmatrix}</script><p>或是$(1, 6, 4, 5, 3, 2)$會形成三個環</p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+1
+\end{pmatrix}
+\begin{pmatrix}
+6 & 2
+\end{pmatrix}
+\begin{pmatrix}
+4 & 5 & 3
+\end{pmatrix}</script><p>也就是說，每個環代表第一個元素要放到第二個元素的位置，第二個元素要放到第三個元素的位置…以此類推<br>一個大小$L$的環需要的交換次數是$L-1$，所以把$1\dots n$的排列排序好所需的時間就是$n-($環的個數$)$<br>用數學一點的講法就是一個置換可以分解成好多不相交的輪換(?)而且方法是唯一的喔</p>
+<p>考慮一下交換了兩個數字會發生什麼事:<br>如果他們在同一個「環」裡面，那那個環就會被切成兩個環<br>反之則會讓兩個環合在一起，變成一個「環」<br>示意圖大概就是這樣</p>
+<p><img src="/images/TIOJ-1950/cycles.png" alt="沒有圖的啦"></p>
+<p>要怎麼辦到這件事呢？快速把元素之間連接或者切斷，我們會想到使用鏈結串列，但是這樣無法判斷他們是否在同一個環裡面<br>退而求其次可以使用二元樹來維護，用$\mathcal{O}(\log n)$獲得可以剪切又可以黏貼序列的神力(?)<br>我選擇用splay來實作，詳細的原理自己google OwO</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   __________________</span></span><br><span class="line"><span class="comment">//  | ________________ |</span></span><br><span class="line"><span class="comment">//  ||          ____  ||</span></span><br><span class="line"><span class="comment">//  ||   /\    |      ||</span></span><br><span class="line"><span class="comment">//  ||  /__\   |      ||</span></span><br><span class="line"><span class="comment">//  || /    \  |____  ||</span></span><br><span class="line"><span class="comment">//  ||________________||</span></span><br><span class="line"><span class="comment">//  |__________________|</span></span><br><span class="line"><span class="comment">//  \###################\</span></span><br><span class="line"><span class="comment">//   \###################\</span></span><br><span class="line"><span class="comment">//    \        ____       \</span></span><br><span class="line"><span class="comment">//     \_______\___\_______\</span></span><br><span class="line"><span class="comment">// An AC a day keeps the doctor away.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> g++ optimize(<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> loop_opt(on)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/extc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> local</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cerr&lt;&lt;#x&lt;&lt;<span class="meta-string">" = "</span>&lt;&lt;(x)&lt;&lt;<span class="meta-string">'\n'</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) ((void)0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// local</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int64_t</span> ll;</span><br><span class="line"><span class="keyword">constexpr</span> ll N = <span class="number">100025</span>, INF = <span class="number">1e18</span>, MOD = <span class="number">998244353</span>, K = <span class="number">64</span>, inf = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Splay</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">        <span class="keyword">int</span> ch[<span class="number">2</span>],pa;</span><br><span class="line">        <span class="keyword">int</span> lf[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">// lf[0] is the leftmost element of this splay, lf[1] is the rightmost</span></span><br><span class="line">    &#125; T[N];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pull</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        T[i].lf[<span class="number">0</span>] = T[i].ch[<span class="number">0</span>] ? T[T[i].ch[<span class="number">0</span>]].lf[<span class="number">0</span>] : i;</span><br><span class="line">        T[i].lf[<span class="number">1</span>] = T[i].ch[<span class="number">1</span>] ? T[T[i].ch[<span class="number">1</span>]].lf[<span class="number">1</span>] : i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isroot</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> T[x].pa==<span class="number">0</span>;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dir</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> T[T[x].pa].ch[<span class="number">1</span>] == x;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rot</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> y = T[x].pa, z = T[y].pa, d = dir(x);</span><br><span class="line">        T[x].pa = z;</span><br><span class="line">        <span class="keyword">if</span>(!isroot(y)) T[z].ch[dir(y)] = x;</span><br><span class="line">        T[T[x].ch[!d]].pa = y, T[y].ch[d] = T[x].ch[!d];</span><br><span class="line">        T[x].ch[!d] = y, T[y].pa = x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(!isroot(x)) &#123;</span><br><span class="line">            <span class="keyword">int</span> y = T[x].pa;</span><br><span class="line">            <span class="keyword">if</span>(!isroot(y)) &#123;</span><br><span class="line">                <span class="keyword">if</span>(dir(x) ^ dir(y))</span><br><span class="line">                    rot(x);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    rot(y);</span><br><span class="line">            &#125;</span><br><span class="line">            rot(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> T[x].lf[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">//like DSU, present a tree with unique element(leftmost)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// (A..., x, B...) -&gt; (A...) + (x, B...)</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">cut</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        splay(x);</span><br><span class="line">        <span class="keyword">int</span> res = T[x].ch[<span class="number">0</span>];</span><br><span class="line">        T[T[x].ch[<span class="number">0</span>]].pa = <span class="number">0</span>, T[x].ch[<span class="number">0</span>] = <span class="number">0</span>, T[x].lf[<span class="number">0</span>] = x;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// (A..., x, B...) + (C..., y, D...) -&gt; (x, B...C..., y, D...A...)</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!x || !y || splay(x) == splay(y)) <span class="keyword">return</span>;</span><br><span class="line">        x = T[x].lf[<span class="number">1</span>], y = T[y].lf[<span class="number">0</span>];</span><br><span class="line">        splay(x), splay(y);</span><br><span class="line">        T[y].pa = x, T[x].ch[<span class="number">1</span>] = y;</span><br><span class="line">        splay(y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">poke</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(splay(x) == splay(y)) &#123;</span><br><span class="line">            <span class="comment">// (A..., x, B..., y, C...) -&gt; (x, B...) + (y, C...A...)</span></span><br><span class="line">            <span class="keyword">int</span> a = cut(x);</span><br><span class="line">            link(x,a);</span><br><span class="line">            cut(y);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// (A..., x, B...) + (C..., y, D...) -&gt; (x, B...A..., y, D...C...)</span></span><br><span class="line">            <span class="keyword">int</span> a = cut(x);</span><br><span class="line">            <span class="keyword">int</span> b = cut(y);</span><br><span class="line">            link(x,a);</span><br><span class="line">            link(y,b);</span><br><span class="line">            link(x,y);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            T[i].lf[<span class="number">0</span>] = T[i].lf[<span class="number">1</span>] = i, T[i].pa = T[i].ch[<span class="number">0</span>] = T[i].ch[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*void dfs(int i) &#123;</span></span><br><span class="line"><span class="comment">        if(!i) return;</span></span><br><span class="line"><span class="comment">        dfs(T[i].ch[0]);</span></span><br><span class="line"><span class="comment">        cout &lt;&lt; i &lt;&lt; ' ';</span></span><br><span class="line"><span class="comment">        dfs(T[i].ch[1]);</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    void dbg(int n) &#123;</span></span><br><span class="line"><span class="comment">        //return;</span></span><br><span class="line"><span class="comment">        cout &lt;&lt; "===\n";</span></span><br><span class="line"><span class="comment">        for(int i = 1; i &lt;= n; i++) if(isroot(i)) dfs(i), cout &lt;&lt; '\n';</span></span><br><span class="line"><span class="comment">        cout &lt;&lt; "===\n\n";</span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line">&#125; cycles;</span><br><span class="line"><span class="keyword">int</span> n,q,v[N],vis[N],pos[N],ans;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">    cycles.init(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; v[i], pos[v[i]] = i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span>(!vis[i]) &#123;</span><br><span class="line">        <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = i; !vis[x]; x = pos[x]) &#123;</span><br><span class="line">            <span class="keyword">if</span>(last) ans += cycles.poke(v[last],v[x]);</span><br><span class="line">            vis[x] = <span class="number">1</span>;</span><br><span class="line">            last = x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">//tr.dbg(n);</span></span><br><span class="line">    <span class="comment">//return 0;</span></span><br><span class="line">    <span class="keyword">while</span>(q--) &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        ans += cycles.poke(a,b);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="comment">//tr.dbg(n);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#小向的試煉-2-3：轉！-Rotate"><span class="toc-number">1.</span> <span class="toc-text">小向的試煉 2-3：轉！(Rotate!)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/13/TIOJ-1950/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/13/TIOJ-1950/&text=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/13/TIOJ-1950/&is_video=false&description=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1950&body=Check out this article: http://yoursite.com/2019/12/13/TIOJ-1950/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/13/TIOJ-1950/&title=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/13/TIOJ-1950/&name=TIOJ-1950&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2019/12/13/TIOJ-1950/&t=TIOJ-1950" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Bing-Hsuan, Lin
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-153846761-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'omeletwithoutegg';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
