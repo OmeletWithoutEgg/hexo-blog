@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="通關密語Description給定兩個長度小於 $5 \times 10^4$ 的小寫英文字母字串 $S,T$定義「最佳擬合」，就是將 $S$ 經過平移後和 $T$ 比對，同樣的字元數最多的那一種方法。請輸出一個正整數，代表最佳擬合的方案下，相同的字元有幾個。 ex.對於  ababababab  來說，  ababa&#x3D;babab  這是一種最佳擬合的方法，經過平移之後$S,T$有四個位置的字元相">
+    <meta name="description" content="通關密語Description給定兩個長度小於 $5 \times 10^4$ 的小寫英文字母字串 $S,T$定義「最佳擬合」，就是將 $S$ 經過平移後和 $T$ 比對，同樣的字元數最多的那一種方法。請輸出一個正整數，代表最佳擬合的方案下，相同的字元有幾個。 ex.對於  ababababab  來說，  ababa&#x3D;babab  這是一種最佳擬合的方法，$S$經過向左平移之後$S,T$有四個位">
 <meta name="keywords" content="TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1035">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;TIOJ-1035&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
-<meta property="og:description" content="通關密語Description給定兩個長度小於 $5 \times 10^4$ 的小寫英文字母字串 $S,T$定義「最佳擬合」，就是將 $S$ 經過平移後和 $T$ 比對，同樣的字元數最多的那一種方法。請輸出一個正整數，代表最佳擬合的方案下，相同的字元有幾個。 ex.對於  ababababab  來說，  ababa&#x3D;babab  這是一種最佳擬合的方法，經過平移之後$S,T$有四個位置的字元相">
+<meta property="og:description" content="通關密語Description給定兩個長度小於 $5 \times 10^4$ 的小寫英文字母字串 $S,T$定義「最佳擬合」，就是將 $S$ 經過平移後和 $T$ 比對，同樣的字元數最多的那一種方法。請輸出一個正整數，代表最佳擬合的方案下，相同的字元有幾個。 ex.對於  ababababab  來說，  ababa&#x3D;babab  這是一種最佳擬合的方法，$S$經過向左平移之後$S,T$有四個位">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-18T04:55:03.358Z">
+<meta property="og:updated_time" content="2019-12-18T05:01:33.061Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -47,7 +47,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -150,7 +151,7 @@
 <blockquote>
 <p>ababa<br>=babab</p>
 </blockquote>
-<p>這是一種最佳擬合的方法，經過平移之後$S,T$有四個位置的字元相同</p>
+<p>這是一種最佳擬合的方法，$S$經過向左平移之後$S,T$有四個位置的字元相同</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>naive的$n^2$做法可以AC本題，只要妥當控制常數即可<br>不過這裡提供一個NTT的$\mathcal{O}(C\cdot n\log n)$解</p>
 <p>假設$S$對$T$的平移量是$x$(可以為負的)，題目所求為</p>
 <script type="math/tex; mode=display">
@@ -299,26 +300,8 @@ R_x = \sum_{i+j = x} F_i G_j = F * G</script><p>最後取$R$的最大值就好�
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
