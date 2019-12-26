@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="小向的試煉 2-3：轉！(Rotate!)Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到">
+    <meta name="description" content="小向的試煉 2-3：轉！(Rotate!)https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1950 Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到">
 <meta name="keywords" content="TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1950">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;13&#x2F;TIOJ-1950&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
-<meta property="og:description" content="小向的試煉 2-3：轉！(Rotate!)Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到">
+<meta property="og:description" content="小向的試煉 2-3：轉！(Rotate!)https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1950 Description給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案 Solution已經知道每個數字應該被放到哪裡了，所以我們可以想到">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1950&#x2F;cycles.png">
-<meta property="og:updated_time" content="2019-12-16T01:29:04.210Z">
+<meta property="og:updated_time" content="2019-12-24T10:15:41.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1950&#x2F;cycles.png">
     
@@ -145,7 +145,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="小向的試煉-2-3：轉！-Rotate"><a href="#小向的試煉-2-3：轉！-Rotate" class="headerlink" title="小向的試煉 2-3：轉！(Rotate!)"></a>小向的試煉 2-3：轉！(Rotate!)</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」<br>另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案</p>
+    <h1 id="小向的試煉-2-3：轉！-Rotate"><a href="#小向的試煉-2-3：轉！-Rotate" class="headerlink" title="小向的試煉 2-3：轉！(Rotate!)"></a>小向的試煉 2-3：轉！(Rotate!)</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1950" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1950</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定長度$N$的排列，問「以交換任意兩個數字的方式排序這個序列需要多少次數」<br>另外有$M$次修改，每次修改會交換數字$i$和數字$j$的位置，請輸出$M+1$行代表一開始和每次修改過後的答案</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>已經知道每個數字應該被放到哪裡了，所以我們可以想到一個排序方法<br>每次看某個位置$i$的數字$x$，如果和$i$不同的話就把$x$放到位置$x$的地方，再繼續對原本放在位置$x$的地方的數字做同樣的事<br>可以發現這樣會形成好幾個「環」，例如範測的$(1, 4, 2, 5, 3)$會形成兩個環</p>
 <script type="math/tex; mode=display">
 \begin{pmatrix}

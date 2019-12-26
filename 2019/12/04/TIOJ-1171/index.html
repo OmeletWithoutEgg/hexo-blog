@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="我要成為海賊王Description給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和 Solution可能算是經典題吧，這邊提供兩種寫法: 重心剖分和輕重鍊剖分 重心剖分重心剖分的核心想法是樹分治，每次拔掉一個點，並統計有經過這個點的答案並遞迴計算沒經過該點的答案為了確保複雜度，每次拔掉重心是一個好選擇也許可以發現每">
+    <meta name="description" content="我要成為海賊王https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1171 Description給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和 Solution可能算是經典題吧，這邊提供兩種寫法: 重心剖分和輕重鍊剖分 重心剖分重心剖分的核心想法是樹分治，每次拔掉一個點，並統計有經過這個點的答案">
 <meta name="keywords" content="TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1171">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;TIOJ-1171&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
-<meta property="og:description" content="我要成為海賊王Description給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和 Solution可能算是經典題吧，這邊提供兩種寫法: 重心剖分和輕重鍊剖分 重心剖分重心剖分的核心想法是樹分治，每次拔掉一個點，並統計有經過這個點的答案並遞迴計算沒經過該點的答案為了確保複雜度，每次拔掉重心是一個好選擇也許可以發現每">
+<meta property="og:description" content="我要成為海賊王https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1171 Description給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和 Solution可能算是經典題吧，這邊提供兩種寫法: 重心剖分和輕重鍊剖分 重心剖分重心剖分的核心想法是樹分治，每次拔掉一個點，並統計有經過這個點的答案">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1171&#x2F;HLD.png">
-<meta property="og:updated_time" content="2019-12-08T15:40:49.229Z">
+<meta property="og:updated_time" content="2019-12-24T10:17:41.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;TIOJ-1171&#x2F;HLD.png">
     
@@ -145,7 +145,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="我要成為海賊王"><a href="#我要成為海賊王" class="headerlink" title="我要成為海賊王"></a>我要成為海賊王</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和</p>
+    <h1 id="我要成為海賊王"><a href="#我要成為海賊王" class="headerlink" title="我要成為海賊王"></a>我要成為海賊王</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1171" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1171</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定一棵樹，一開始所有頂點都是白色的，有$q$次操作，每次操作可以把一個頂點塗成黑色，或者詢問某個頂點$x$到所有黑色頂點的距離和</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>可能算是經典題吧，這邊提供兩種寫法: 重心剖分和輕重鍊剖分</p>
 <h3 id="重心剖分"><a href="#重心剖分" class="headerlink" title="重心剖分"></a>重心剖分</h3><p>重心剖分的核心想法是樹分治，每次拔掉一個點，並統計有經過這個點的答案並遞迴計算沒經過該點的答案<br>為了確保複雜度，每次拔掉重心是一個好選擇<br>也許可以發現每個頂點都會當一次重心(?)<br>並且若把每次拔掉的重心$c$和分治下去的每個子樹找到的重心$c’$都連邊，也會是一棵樹，稱為重心樹</p>
 <p>假設我要查詢$x$這個點，我們就枚舉$x$在重心樹上的祖先<br>對於所有黑色頂點$b$來說都可以找到恰一個祖先$c$使得$b,x$最後是被$c$分開的<br>可以想到紀錄$cnt_c, sum_c$分別代表分治到以$c$為重心的時候的子樹中，黑色節點的數量以及與$c$的距離和<br>加加減減就能得到答案了<br>算式好難推QQ去查了YP的題解才知道怎麼寫</p>
