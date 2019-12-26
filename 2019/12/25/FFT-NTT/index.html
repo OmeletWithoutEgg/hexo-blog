@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;root_of_unity.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;bit_reverse.png">
-<meta property="og:updated_time" content="2019-12-26T06:56:26.609Z">
+<meta property="og:updated_time" content="2019-12-26T07:02:55.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;root_of_unity.png">
     
@@ -263,7 +263,7 @@ C(1) \\ C(\omega) \\ \vdots \\ C(\omega^{n-1})
 <p><a href="https://www.cnblogs.com/Guess2/p/8422205.html" target="_blank" rel="noopener">→NTT模數表←</a></p>
 <h3 id="中國剩餘"><a href="#中國剩餘" class="headerlink" title="中國剩餘?"></a>中國剩餘?</h3><p>一個模數合不合適取決於最後答案的大小<br>兩個值域$c$、長度$n$的多項式相乘，得出來的乘積的值域最多會是$nc^2$<br>如果不會超過模數的話就可以直接使用<br>但如果會超過怎麼辦？<br>挑選更大的模數沒什麼用，因為相乘起來可能就超過long long了<br>這時我們就必須做多次NTT再用中國剩餘定理合併</p>
 <p>如果真實的答案不是指數或階乘那種直接爆炸的數值<br>甚至還可以用來對任意數字取模(?)</p>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>FFT與NTT的利用其實滿少的，大部分是生成函數，以後有時間再放一篇講好了</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>FFT與NTT的利用其實滿少的，大部分不是大數乘法就是生成函數，以後有時間再放一篇講好了</p>
 
   </div>
 </article>
