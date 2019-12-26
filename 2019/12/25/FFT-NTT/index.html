@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;root_of_unity.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;bit_reverse.png">
-<meta property="og:updated_time" content="2019-12-26T07:02:55.543Z">
+<meta property="og:updated_time" content="2019-12-26T07:04:11.835Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;FFT-NTT&#x2F;root_of_unity.png">
     
@@ -185,8 +185,8 @@ A(x_0)B(x_0) \\ A(x_1)B(x_1) \\ \vdots \\ A(x_{n-1})B(x_{n-1})
 =
 \begin{bmatrix}
 c_0 \\ c_1 \\ \vdots \\ c_{n-1}
-\end{bmatrix}</script><p>最後一步直接高斯消去或用拉格朗日/牛頓插值法可以做到$\mathcal{O}(n^2)$<br>稱為DFT(對序列的版本叫離散傅立葉變換，與使用積分的連續傅立葉變換相對)</p>
-<p>但是這樣根本沒有改進多少複雜度啊？<br>邁向快速傅立葉變換的鑰匙是利用複數，取特定的某些$x$讓我們能夠分治</p>
+\end{bmatrix}</script><p>最後一步直接高斯消去或用拉格朗日/牛頓插值法可以做到$\mathcal{O}(n^2)$</p>
+<p>上述步驟稱為DFT(對序列的版本叫離散傅立葉變換，與使用積分的連續傅立葉變換相對)和IDFT<br>但是這樣根本沒有改進多少複雜度啊？<br>邁向快速傅立葉變換的鑰匙是利用複數，取特定的某些$x$讓我們能夠分治</p>
 <h2 id="Root-of-Unity"><a href="#Root-of-Unity" class="headerlink" title="Root of Unity"></a>Root of Unity</h2><p>首先先來介紹單位根$\omega$是使得</p>
 <script type="math/tex; mode=display">
 \omega ^ n = 1 \\
