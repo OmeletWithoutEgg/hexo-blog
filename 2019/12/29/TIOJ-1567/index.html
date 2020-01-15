@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="黑色騎士團的飛彈野望Description給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點若不可行輸出-1 Solution首先我們對每個點都可以知道包覆它的圓的圓心範圍在$x$軸的哪段區間那題目就轉換成在$x$軸上放一些圓心，使得每個點對應的區間內都至少有一個點被選到此為greedy經典題，按照右界排序後，由小到大檢查若某個區間還沒有放東西就放一個在它的右界">
+    <meta name="description" content="黑色騎士團的飛彈野望https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1567 Description給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點若不可行輸出-1 Solution首先我們對每個點都可以知道包覆它的圓的圓心範圍在$x$軸的哪段區間那題目就轉換成在$x$軸上放一些圓心，使得每個點對應的區間內都至少有一個點被選到此為greed">
 <meta name="keywords" content="TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1567">
 <meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2019&#x2F;12&#x2F;29&#x2F;TIOJ-1567&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
-<meta property="og:description" content="黑色騎士團的飛彈野望Description給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點若不可行輸出-1 Solution首先我們對每個點都可以知道包覆它的圓的圓心範圍在$x$軸的哪段區間那題目就轉換成在$x$軸上放一些圓心，使得每個點對應的區間內都至少有一個點被選到此為greedy經典題，按照右界排序後，由小到大檢查若某個區間還沒有放東西就放一個在它的右界">
+<meta property="og:description" content="黑色騎士團的飛彈野望https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1567 Description給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點若不可行輸出-1 Solution首先我們對每個點都可以知道包覆它的圓的圓心範圍在$x$軸的哪段區間那題目就轉換成在$x$軸上放一些圓心，使得每個點對應的區間內都至少有一個點被選到此為greed">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-29T13:27:54.195Z">
+<meta property="og:updated_time" content="2020-01-15T14:53:20.287Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -149,7 +149,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="黑色騎士團的飛彈野望"><a href="#黑色騎士團的飛彈野望" class="headerlink" title="黑色騎士團的飛彈野望"></a>黑色騎士團的飛彈野望</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點<br>若不可行輸出-1</p>
+    <h1 id="黑色騎士團的飛彈野望"><a href="#黑色騎士團的飛彈野望" class="headerlink" title="黑色騎士團的飛彈野望"></a>黑色騎士團的飛彈野望</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1567" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1567</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定平面上$n$個點，求至少要用幾個圓心在$x$軸上、半徑為$r$的圓才能覆蓋所有點<br>若不可行輸出-1</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先我們對每個點都可以知道包覆它的圓的圓心範圍在$x$軸的哪段區間<br>那題目就轉換成在$x$軸上放一些圓心，使得每個點對應的區間內都至少有一個點被選到<br>此為greedy經典題，按照右界排序後，由小到大檢查若某個區間還沒有放東西就放一個在它的右界</p>
 <p>證明很簡單，右界最小的區間內一定至少要選一個點放<br>假設沒有選右界$r$而選了某個點$i$放，則改選右界，不會有其他右界更大的區間$I$包含$i$卻不包含$r$<br>故選右界最小的區間的右界不會錯過最佳解</p>
 <p>無解的判斷就是只要有一個點和$x$軸距離超過$r$就不可行，否則顯然至多用$n$個圓可以覆蓋所有點</p>

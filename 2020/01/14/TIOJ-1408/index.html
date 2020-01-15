@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="我很忙Description給定$n$個時段$[l_i, r_i)$問至少有多少單位時間要是忙碌的才能滿足「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒) 註: 題目保證有解 Solution看到這種很多區間的題目，就會很想把它們照右界從小到大排序 可以想到一個greedy策略按右界遞增排序好之後，遇到一個時段就看是否已經滿足條件如果已經滿足了就跳過如果還沒有的話就">
+    <meta name="description" content="我很忙https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1408 Description給定$n$個時段$[l_i, r_i)$問至少有多少單位時間要是忙碌的才能滿足「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒) 註: 題目保證有解 Solution看到這種很多區間的題目，就會很想把它們照右界從小到大排序 可以想到一個greedy策略按右界遞增">
 <meta name="keywords" content="TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1408">
 <meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;01&#x2F;14&#x2F;TIOJ-1408&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
-<meta property="og:description" content="我很忙Description給定$n$個時段$[l_i, r_i)$問至少有多少單位時間要是忙碌的才能滿足「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒) 註: 題目保證有解 Solution看到這種很多區間的題目，就會很想把它們照右界從小到大排序 可以想到一個greedy策略按右界遞增排序好之後，遇到一個時段就看是否已經滿足條件如果已經滿足了就跳過如果還沒有的話就">
+<meta property="og:description" content="我很忙https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1408 Description給定$n$個時段$[l_i, r_i)$問至少有多少單位時間要是忙碌的才能滿足「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒) 註: 題目保證有解 Solution看到這種很多區間的題目，就會很想把它們照右界從小到大排序 可以想到一個greedy策略按右界遞增">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-14T13:23:22.366Z">
+<meta property="og:updated_time" content="2020-01-15T14:53:42.402Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -147,7 +147,8 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="我很忙"><a href="#我很忙" class="headerlink" title="我很忙"></a>我很忙</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定$n$個時段$[l_i, r_i)$<br>問至少有多少單位時間要是忙碌的才能滿足<br>「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒)</p>
+    <h1 id="我很忙"><a href="#我很忙" class="headerlink" title="我很忙"></a>我很忙</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1408" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1408</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>給定$n$個時段$[l_i, r_i)$<br>問至少有多少單位時間要是忙碌的才能滿足<br>「每個時段中都有至少$c_i$單位時間是忙碌的」(每單位時間都不是忙碌就是空閒)</p>
 <p>註: 題目保證有解</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p><del>看到這種很多區間的題目，就會很想把它們照右界從小到大排序</del></p>
 <p>可以想到一個greedy策略<br>按右界遞增排序好之後，遇到一個時段就看是否已經滿足條件<br>如果已經滿足了就跳過<br>如果還沒有的話就必須選一些時間由空閒變為忙碌，而這些時間依照貪心的原則是從越右邊開始選越好<br>(選左邊的不會對之後右界更大的時段有比較多幫助)</p>
