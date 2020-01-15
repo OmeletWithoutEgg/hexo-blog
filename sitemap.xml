@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://omeletwithoutegg.github.io/2019/12/30/Modulo-Arithmetic/</loc>
+    
+    <lastmod>2020-01-15T07:49:25.494Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://omeletwithoutegg.github.io/about/index.html</loc>
     
     <lastmod>2020-01-15T04:42:37.851Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://omeletwithoutegg.github.io/2020/01/14/TIOJ-1408/</loc>
     
     <lastmod>2020-01-14T13:23:22.366Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://omeletwithoutegg.github.io/2019/12/30/Modulo-Arithmetic/</loc>
-    
-    <lastmod>2020-01-12T15:08:22.115Z</lastmod>
     
   </url>
   
