@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="C.幼稚國王的獎賞https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1094 Description定義一個非負整數集合的價值是裡面所有數字XOR起來給定一些非負整數，問你能選出價值最高的子集價值是多少？ Solution經典題 maximum subset xor 線性基首先可以把每個數字的二進位看成模2的$k$維向量 span我們說一群向量$S &#x3D; \{\textbf{v}">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-25T14:19:07.459Z">
+<meta property="og:updated_time" content="2020-01-25T15:14:39.211Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -49,7 +49,8 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -153,18 +154,18 @@
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>定義一個非負整數集合的價值是裡面所有數字XOR起來<br>給定一些非負整數，問你能選出價值最高的子集價值是多少？</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>經典題 maximum subset xor</p>
 <h3 id="線性基"><a href="#線性基" class="headerlink" title="線性基"></a>線性基</h3><p>首先可以把每個數字的二進位看成模2的$k$維向量</p>
-<h4 id="span"><a href="#span" class="headerlink" title="span"></a>span</h4><p>我們說一群向量$S = \{\textbf{v}_1, \textbf{v}_2, \dots, \textbf{v}_n\}$的線性生成空間是</p>
+<h4 id="span"><a href="#span" class="headerlink" title="span"></a>span</h4><p>我們說一群向量$S = \{\textbf{v}_ 1, \textbf{v}_ 2, \dots, \textbf{v}_ n\}$的線性生成空間是</p>
 <script type="math/tex; mode=display">
-\textrm{span}(S) = \{ \sum_{i=1}^n\lambda_i \textbf{v}_i \}</script><p>也就是說$\textrm{span}(S)$代表的是所有$S$內的元素的有限線性組合</p>
-<h4 id="linear-independent"><a href="#linear-independent" class="headerlink" title="linear independent"></a>linear independent</h4><p>對於一組向量$\{\textbf{v}_1, \textbf{v}_2, \dots, \textbf{v}_n\}$<br>若存在不全為$0$的$\lambda_1, \lambda_2, \dots, \lambda_n$使得</p>
+\textrm{span}(S) = \{ \sum_{i=1}^n\lambda_i \textbf{v}_ i \}</script><p>也就是說$\textrm{span}(S)$代表的是所有$S$內的元素的有限線性組合</p>
+<h4 id="linear-independent"><a href="#linear-independent" class="headerlink" title="linear independent"></a>linear independent</h4><p>對於一組向量$\{\textbf{v}_ 1, \textbf{v}_ 2, \dots, \textbf{v}_ n\}$<br>若存在不全為$0$的$\lambda_1, \lambda_2, \dots, \lambda_n$使得</p>
 <script type="math/tex; mode=display">
-\sum_{i=1}^n\lambda_i \textbf{v}_i = \textbf{0}</script><p>則我們說這群向量是線性相關的；反之則稱為線性獨立(linear independent)</p>
+\sum_{i=1}^n\lambda_ i \textbf{v}_ i = \textbf{0}</script><p>則我們說這群向量是線性相關的；反之則稱為線性獨立(linear independent)</p>
 <p>一組線性相關的向量至少有一個向量可以用其他向量表示<br>說明: 不失一般性設$\lambda_1 \neq 0$，則</p>
 <script type="math/tex; mode=display">
-\textbf{v}_1 = \sum_{i=2}^n \frac{-\lambda_i}{\lambda_1} \textbf{v}_i</script><h4 id="basis"><a href="#basis" class="headerlink" title="basis"></a>basis</h4><p>一組向量$B=\{\textbf{e}_1, \textbf{e}_2, \dots, \textbf{e}_n\}$是一個向量空間$V$的基底(basis)若且唯若$\textrm{span}(B) = V$且$B$是一組線性獨立的向量</p>
+\textbf{v}_ 1 = \sum_ {i=2}^n \frac{-\lambda_i}{\lambda_1} \textbf{v}_i</script><h4 id="basis"><a href="#basis" class="headerlink" title="basis"></a>basis</h4><p>一組向量$B=\{\textbf{e}_ 1, \textbf{e}_ 2, \dots, \textbf{e}_ n\}$是一個向量空間$V$的基底(basis)若且唯若$\textrm{span}(B) = V$且$B$是一組線性獨立的向量</p>
 <p>由定義可以直接推出，$V$中的所有向量$\textbf{v}$都可以唯一表示為$B$裡面的向量的線性組合，因為</p>
 <script type="math/tex; mode=display">
-\textbf{v} = \sum \lambda_i \textbf{e}_i = \sum \lambda_i' \textbf{e}_i \Leftrightarrow \sum (\lambda_i - \lambda_i') \textbf{e}_i = \textbf{0} \Leftrightarrow \forall i, \lambda_i = \lambda_i'</script><h4 id="高斯消去"><a href="#高斯消去" class="headerlink" title="高斯消去"></a>高斯消去</h4><p>講了那麼多廢話，這題到底要怎麼做呢？<br>設給定的數字集合是$V$，可以發現我們要求的就是$S = \textrm{span}(V)$中的最大值，透過維護$S$的基底集合$B$，我們能夠快速得知是否能夠湊出一個第k位是1的XOR值</p>
+\textbf{v} = \sum \lambda_i \textbf{e}_ i = \sum \lambda_i' \textbf{e}_ i \Leftrightarrow \sum (\lambda_i - \lambda_i') \textbf{e}_ i = \textbf{0} \Leftrightarrow \forall i, \lambda_i = \lambda_i'</script><h4 id="高斯消去"><a href="#高斯消去" class="headerlink" title="高斯消去"></a>高斯消去</h4><p>講了那麼多廢話，這題到底要怎麼做呢？<br>設給定的數字集合是$V$，可以發現我們要求的就是$S = \textrm{span}(V)$中的最大值，透過維護$S$的基底集合$B$，我們能夠快速得知是否能夠湊出一個第k位是1的XOR值</p>
 <p>當我們考慮到第k位的時候，我們至多只需要保存一個最高位是第k位的基底，因為假設有兩個基$x,y$其第k位都是1，則可以用$x \oplus y$來代替$x$</p>
 <p>嘗試加入一個數字$x$到基底時，我們從$x$的最高位k開始看<br>假設已經有一個基底$e$的最高位是第k位，我們就可以把$x$替換成$x \oplus e$，如果此時$x$變為0代表$x$已經可以用前面的一些基底湊出來了，加入$x$會破壞線性獨立的特性；<br>反之，若沒有一個基底$e$的最高位是第k位，那我們就直接加入$x$作為提供第k位的1的人</p>
 <p>那麼最後我們要怎麼取最大值呢？同樣從最高位開始看<br>如果目前看到第k位，並且答案的第k位是0<br>若又剛好存在一個最高位是第k位的基底$e$的話，我們取$e$肯定不會虧嘛<br>因為$e$是我們維護唯一一個最高位是第k位的基底，之後不會再考慮到第k位以上的東西了</p>
@@ -328,25 +329,7 @@
   zIndex="-1"
   count="250"
 >
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
