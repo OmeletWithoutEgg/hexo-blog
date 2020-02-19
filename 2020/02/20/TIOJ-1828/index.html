@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="控控控之蘿莉控https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1828 Description你走在路上遇到了一個可愛小蘿莉，因為你的控屬性，所以你跑上去問了她的名字：「小妹妹～你叫什麼名字啊？」她回答：「啊！！！你幹嘛！我不認識你啊你誰啊！！！」你：「我是你的好哥哥，來和我一起玩吧～」這時機智的小妹妹拿起手機打了110你決定要趕快逃跑，以免進入暗無天日的深淵 於是問題來了！">
+<meta name="keywords" content="TIOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1828">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;02&#x2F;20&#x2F;TIOJ-1828&#x2F;index.html">
+<meta property="og:site_name" content="蛋餅的競程隨筆">
+<meta property="og:description" content="控控控之蘿莉控https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1828 Description你走在路上遇到了一個可愛小蘿莉，因為你的控屬性，所以你跑上去問了她的名字：「小妹妹～你叫什麼名字啊？」她回答：「啊！！！你幹嘛！我不認識你啊你誰啊！！！」你：「我是你的好哥哥，來和我一起玩吧～」這時機智的小妹妹拿起手機打了110你決定要趕快逃跑，以免進入暗無天日的深淵 於是問題來了！">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-19T21:48:11.569Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIOJ-1828</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+    <!-- google-site-verification -->
+    <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/02/19/TIOJ-1553/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&text=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&is_video=false&description=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1828&body=Check out this article: https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&name=TIOJ-1828&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&t=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#控控控之蘿莉控"><span class="toc-number">1.</span> <span class="toc-text">控控控之蘿莉控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIOJ-1828
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">蛋餅的競程隨筆</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-19T20:56:05.000Z" itemprop="datePublished">2020-02-20</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIOJ/" rel="tag">TIOJ</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="控控控之蘿莉控"><a href="#控控控之蘿莉控" class="headerlink" title="控控控之蘿莉控"></a>控控控之蘿莉控</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1828" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1828</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>你走在路上遇到了一個可愛小蘿莉，因為你的控屬性，所以你跑上去問了她的名字：「小妹妹～你叫什麼名字啊？」<br>她回答：「啊！！！你幹嘛！我不認識你啊你誰啊！！！」<br>你：「我是你的好哥哥，來和我一起玩吧～」<br>這時機智的小妹妹拿起手機打了110<br>你決定要趕快逃跑，以免進入暗無天日的深淵</p>
+<p>於是問題來了！<br>你要跑多快才不會被抓(你只能跑<strong>整數</strong>的速度)？<br>因為警察的體力有限，不能跑超過警局外的$10000$單位距離，所以逃出$10000$單位距離就好了</p>
+<p>第一行有一個整數$T$代表測資筆數，<br>每行有三個無號整數$X,Y,Z$<br>$X$代表你現在跟警察局的距離，<br>$Y$代表小妹妹跟警察叔叔還要在$Y$秒才會講完電話，<br>$Z$代表講完電話後警察會馬上用秒速$Z$的速度沖上來追你<br>$0 \leq X,Y,Z \leq 10^6$<br>如果講完電話後，你還待在警察局門口，是會被抓的喔<br>注意你站在距警察局恰$10000$單位距離的點上也還是會被抓的喔</p>
+<p>請輸出ㄧ個整數代表你至少要用多少的體力才不會被追悼<br>如果不管怎麼樣都會被追到請輸出 <code>-1</code></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>是個大特判題呢<br>唯ㄧ會出現 <code>-1</code> 的case就是$X=Y=0$的時候，也就是ㄧ開始就被追上<br>首先可以知道人和警察兩個直線的差會與時間成線性<br>所以最小的差肯定是出現在端點<br>我們僅需要考慮剛出發那一刻和警察跨過$10000$那一刻，是否有被警察超前過即可<br>假設$T$是距離講完電話過了$T$秒，並且逃跑的速度是$V$<br>那麼可以列出式子</p>
+<script type="math/tex; mode=display">
+X + (Y+T)V > TZ</script><p>當$T$是$0$，可以知道$V$的最小值不是$0$就是$1$，取決於$X,Y$是否為0<br>當警察跨過$10000$時，$T=10000/Z$，移項一下可以得到$V &gt; \frac{(10000-X)Z}{YZ+10000}$<br>不過注意$Z$必須不為$0$，若$Z$為$0$可以直接特判掉</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> g++ optimize(<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> loop_opt(on)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> L = <span class="number">10000</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x, y, z;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">    <span class="keyword">if</span>(x == <span class="number">0</span> &amp;&amp; y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &gt; L) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(!z) <span class="keyword">return</span> !x;</span><br><span class="line">    <span class="keyword">return</span> (L-x) * ll(z) / (ll(z)*y + L) + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    X + (Y+T)V &gt; min(10000, TZ)</span></span><br><span class="line"><span class="comment">    X + (Y+T)V &gt; TZ</span></span><br><span class="line"><span class="comment">    XZ + (YZ+TZ)V &gt; TZZ</span></span><br><span class="line"><span class="comment">    consider T == 10000/Z and T == 0</span></span><br><span class="line"><span class="comment">    V &gt; (10000-X)Z / (ZY+10000)</span></span><br><span class="line"><span class="comment">    X + YV &gt; 0</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, solve());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#控控控之蘿莉控"><span class="toc-number">1.</span> <span class="toc-text">控控控之蘿莉控</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&text=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&is_video=false&description=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1828&body=Check out this article: https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&title=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&name=TIOJ-1828&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1828/&t=TIOJ-1828" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Bing-Hsuan, Lin
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-153846761-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'omeletwithoutegg';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<!-- canvas nest animation -->
+<script
+  type="text/javascript"
+  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+  color="0,200,100"
+  opacity="0.25"
+  zIndex="-1"
+  count="250"
+>
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
