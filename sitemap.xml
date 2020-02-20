@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/</loc>
+    
+    <lastmod>2020-02-20T17:10:02.822Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://omeletwithoutegg.github.io/2020/01/02/bamboofox-ctf/</loc>
+    
+    <lastmod>2020-02-20T17:04:31.523Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://omeletwithoutegg.github.io/2020/01/25/IOICamp-2020/</loc>
+    
+    <lastmod>2020-02-20T17:04:07.434Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://omeletwithoutegg.github.io/2020/02/20/TIOJ-1884/</loc>
     
-    <lastmod>2020-02-20T16:55:50.373Z</lastmod>
+    <lastmod>2020-02-20T17:03:55.672Z</lastmod>
     
   </url>
   
@@ -65,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://omeletwithoutegg.github.io/2020/01/25/IOICamp-2020/</loc>
-    
-    <lastmod>2020-01-25T15:12:23.834Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://omeletwithoutegg.github.io/2020/01/25/TIOJ-1283/</loc>
     
     <lastmod>2020-01-25T15:12:17.918Z</lastmod>
@@ -89,13 +103,6 @@
     <loc>https://omeletwithoutegg.github.io/2019/12/05/TIOJ-2019/</loc>
     
     <lastmod>2020-01-25T14:52:43.062Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://omeletwithoutegg.github.io/2020/01/02/bamboofox-ctf/</loc>
-    
-    <lastmod>2020-01-15T14:54:13.789Z</lastmod>
     
   </url>
   
@@ -292,13 +299,6 @@
     <loc>https://omeletwithoutegg.github.io/2019/12/14/TIOJ-1171-LCT/</loc>
     
     <lastmod>2019-12-18T03:02:32.663Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/</loc>
-    
-    <lastmod>2019-12-09T07:37:52.375Z</lastmod>
     
   </url>
   
