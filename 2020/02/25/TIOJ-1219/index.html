@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="發糖果囉https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1219 Description求符合$1 \leq x \leq n, 1 \leq y \leq m$且$x,y$的最大公因數是$g$的數對有多少對有多筆測試資料，$1 \leq n, m, g \leq 50000$ Solution莫比烏斯反演 lemma \sum_d \mu(d) [d | x] &#x3D; [x &#x3D;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-29T10:09:32.725Z">
+<meta property="og:updated_time" content="2020-02-29T10:13:29.233Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -49,8 +49,7 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -157,10 +156,8 @@
 \sum_d \mu(d) [d | x] = [x = 1]</script><p>拿來簡化 $[\gcd(i,j)=1]$ 的部分，再想辦法換一下$\sum$的位置</p>
 <script type="math/tex; mode=display">
 \begin{align*} %*
-\sum_{i=1}^n \sum_{j=1}^m [\gcd(i, j) = g]
-&= \sum_{i=1}^{\lfloor n/g \rfloor} \sum_{j=1}^{\lfloor m/g \rfloor} [\gcd(i, j) = 1] \\
-\sum_{i=1}^N \sum_{j=1}^M [\gcd(i, j) = 1]
-&= \sum_{i=1}^N \sum_{j=1}^M \sum_d \mu(d) \cdot [d | \gcd(i, j)] \\
+\sum_{i=1}^n \sum_{j=1}^m [\gcd(i, j) = g] &= \sum_{i=1}^{\lfloor n/g \rfloor} \sum_{j=1}^{\lfloor m/g \rfloor} [\gcd(i, j) = 1] \\
+\sum_{i=1}^N \sum_{j=1}^M [\gcd(i, j) = 1] &= \sum_{i=1}^N \sum_{j=1}^M \sum_d \mu(d) \cdot [d | \gcd(i, j)] \\
 &= \sum_d \mu(d) \sum_{i=1}^N \sum_{j=1}^M [d | \gcd(i, j)] \\
 &= \sum_d \mu(d) {\lfloor \frac{N}{d} \rfloor} {\lfloor \frac{M}{d} \rfloor}
 \end{align*} %*</script><p>預處理$\mu$的前綴，利用數論分塊可以做到$\mathcal{O}(N + Q \sqrt{N})$</p>
@@ -322,7 +319,25 @@
   zIndex="-1"
   count="250"
 >
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
