@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="[純屬無聊] Tie Breakerhttps:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1274 Description本題考驗你對小向的試煉題敘的理解程度。請回答以下三個問題：  假設2-2的圖來自遊戲「甲」(一個包含五個字母的單字)，2-3的圖來自動畫「乙」(一個包含九個字母的單字 ，請問甲和乙中字母e出現幾次？ 假設3-1的圖來自動畫「丙」(包含四個中文字)，3-3的圖來自">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-16T13:17:56.373Z">
+<meta property="og:updated_time" content="2020-02-29T17:26:48.761Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -159,7 +159,7 @@
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>註: 小向的試煉是TIOJ上一系列的題目，可以自行搜尋</p>
 <p>甲 = Deemo 乙 = charlotte<br>第一點的答案 = 3<br>丙 = 遊戲人生 丁 = 我的英雄學院<br>第二點的答案 = 4<br>戊 = 中二病也想談戀愛 己 = 東京闇鴉 庚 = 雙星之陰陽師<br>第三點的答案 = 2 * (5 + 2) = 14</p>
 <p>這題是考驗油度或是google程度，不過casper用猜的猜出答案，好糟糕</p>
-<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;csdtio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">14</span>&#125;, n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans[<span class="number">4</span>] = &#123;<span class="number">-1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">14</span>&#125;, n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   </div>
 </article>
@@ -228,6 +228,8 @@
   <div class="footer-left">
     Copyright &copy; 2020 Bing-Hsuan, Lin
   </div>
+
+  <!-- <a id="cmatrix-toggle"></a> -->
   <div class="footer-right">
     <nav>
       <ul>
@@ -310,15 +312,14 @@
 
 
 <!-- canvas nest animation -->
-<script
-  type="text/javascript"
-  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+
+<!-- <script type="text/javascript" src="/lib/cmatrix/cmatrix.js"></script> -->
+<!-- <script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+  count=250
   color="0,200,100"
-  opacity="0.25"
-  zIndex="-1"
-  count="250"
+  opacity=0.25
 >
-</script>
+</script> -->
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
