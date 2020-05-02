@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>TIOJ-1861</title>
+      <link href="/2020/05/01/TIOJ-1861/"/>
+      <url>/2020/05/01/TIOJ-1861/</url>
+      
+        <content type="html"><![CDATA[<h1 id="蘿莉切割問題"><a href="#蘿莉切割問題" class="headerlink" title="蘿莉切割問題"></a>蘿莉切割問題</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1861" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1861</a></p><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>請你把一個數字$L$切成$a_1, a_2, \dots, a_n$<br>切一個數字$x$的代價是$x$，可以把它切成$b, x-b$兩個數字<br>找出最小的代價</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>霍夫曼編碼XD老題目<br>把切割的過程看成一個二元樹，每個$a_i$都代表一個葉子<br>其餘的節點代表合併中會出現的數字(?)<br>那麼總代價就是所有葉子的權重乘上各自的深度的和<br>我們想要讓這個代價越小越好<br>可以發現，在最優解$T$中：</p><ol><li>沒有節點只有一個兒子，只要不是葉子的節點都恰好有兩個子節點</li><li>深度最大的那層節點一定是權重最小的，否則可以直接交換得到更優解</li></ol><p>由上面兩點可以發現，權重最小的兩個節點一定都在最深的那一層<br>並且可以在不影響代價的情況下交換節點使得最小的兩個節點互為兄弟<br>結論是：每次把最小和次小的節點合併成一個節點，一定可以得到最佳解</p><p>(QQ我覺得我不會查也不會寫證明)</p><p>要怎麼維護所有節點的最小和次小呢？用一個heap就可以啦</p><h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100025</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int ll</span></span><br><span class="line"><span class="keyword">int</span> v[N];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,ans;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n) &#123;</span><br><span class="line">        ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; v[i];</span><br><span class="line">        <span class="built_in">std</span>::priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt;&gt; pq(v,v+n);</span><br><span class="line">        <span class="keyword">while</span>(pq.size() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> x = pq.top(); pq.pop();</span><br><span class="line">            <span class="keyword">int</span> y = pq.top(); pq.pop();</span><br><span class="line">            ans += (x+y);</span><br><span class="line">            pq.push(x+y);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> TIOJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>recent</title>
       <link href="/2020/04/30/recent/"/>
       <url>/2020/04/30/recent/</url>
