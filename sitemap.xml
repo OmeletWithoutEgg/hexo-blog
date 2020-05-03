@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://omeletwithoutegg.github.io/about/index.html</loc>
+    
+    <lastmod>2020-05-03T14:23:08.526Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://omeletwithoutegg.github.io/2020/05/03/TIOJ-1628/</loc>
     
     <lastmod>2020-05-03T14:21:14.258Z</lastmod>
@@ -355,13 +362,6 @@
     <loc>https://omeletwithoutegg.github.io/2020/02/08/TIOJ-1156/</loc>
     
     <lastmod>2020-02-09T03:36:30.923Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://omeletwithoutegg.github.io/about/index.html</loc>
-    
-    <lastmod>2020-01-15T04:42:37.851Z</lastmod>
     
   </url>
   
