@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="照亮的山景https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1404 Description在一片山的上空，高度為$T$處有$N$個處於不同水平位置的燈泡，如上圖所示。如果山的邊界上某一點與第$i$盞燈的連線不經過任何山稜線上的一點，我們稱第$i$盞燈可以照亮該點。請問在所有$M$盞燈中，至少要打開幾盞燈，才能照亮山上每一個轉折點，或者打開所有的燈也無法照亮所有轉折點？ $1">
+<meta name="keywords" content="TIOJ,geometry,greedy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1404">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;05&#x2F;04&#x2F;TIOJ-1404&#x2F;index.html">
+<meta property="og:site_name" content="蛋餅的競程隨筆">
+<meta property="og:description" content="照亮的山景https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1404 Description在一片山的上空，高度為$T$處有$N$個處於不同水平位置的燈泡，如上圖所示。如果山的邊界上某一點與第$i$盞燈的連線不經過任何山稜線上的一點，我們稱第$i$盞燈可以照亮該點。請問在所有$M$盞燈中，至少要打開幾盞燈，才能照亮山上每一個轉折點，或者打開所有的燈也無法照亮所有轉折點？ $1">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;images&#x2F;TIOJ-1404&#x2F;description.gif">
+<meta property="og:updated_time" content="2020-05-04T13:21:57.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;images&#x2F;TIOJ-1404&#x2F;description.gif">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIOJ-1404</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+    <!-- google-site-verification -->
+    <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/05/03/TIOJ-1628/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&text=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&is_video=false&description=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1404&body=Check out this article: https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&name=TIOJ-1404&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&t=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#照亮的山景"><span class="toc-number">1.</span> <span class="toc-text">照亮的山景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIOJ-1404
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">蛋餅的競程隨筆</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-04T13:05:10.000Z" itemprop="datePublished">2020-05-04</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIOJ/" rel="tag">TIOJ</a>, <a class="tag-link" href="/tags/geometry/" rel="tag">geometry</a>, <a class="tag-link" href="/tags/greedy/" rel="tag">greedy</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="照亮的山景"><a href="#照亮的山景" class="headerlink" title="照亮的山景"></a>照亮的山景</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1404" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1404</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img src="/images/TIOJ-1404/description.gif" alt="404 QQ"><br>在一片山的上空，高度為$T$處有$N$個處於不同水平位置的燈泡，如上圖所示。<br>如果山的邊界上某一點與第$i$盞燈的連線不經過任何山稜線上的一點，我們稱第$i$盞燈可以照亮該點。<br>請問在所有$M$盞燈中，至少要打開幾盞燈，才能照亮山上每一個轉折點，或者打開所有的燈也無法照亮所有轉折點？</p>
+<p>$1 \leq M, N \leq 10^5$<br>所有座標的絕對值小於$10^5$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>發現到每個燈泡可以照到的範圍可能會長的非常奇怪<br>於是我們轉換思維，考慮每個轉折點如果要被照到要有什麼條件<br>可以發現，對於每個轉折點來說有一個區間，只要區間內有一個燈泡有開，這個轉折點就會被照到<br>找出那些區間之後這題就是經典的greedy題目了（按照右界由小到大，有拿過的跳過沒拿過的拿右界那個點）</p>
+<p>那麼要怎麼找出這些區間呢？某個轉折點$p_i$對應的右界，正好是他和他右邊所有其他點所連出的射線中斜率最大者<br>維護一個上凸包能夠找到對應的那個點，再用直線求交點公式找出高度恰好是$T$的位置就好<br>左界也是同樣方式處理</p>
+<p>因為題目給定的點已經幫我們排序好了，所以做凸包是$\mathcal{O}(M)$，而greedy的部分也可以做到$\mathcal{O}(N)$不過我這邊是放了$\mathcal{O}(N\log N)$的，因為找到交點之後必須二分搜求出到底涵蓋了哪些燈泡<br>總複雜度是$\mathcal{O}((M+N)\log N)$</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) cerr&lt;&lt;#x&lt;&lt;<span class="meta-string">" = "</span>&lt;&lt;x&lt;&lt;<span class="meta-string">'\n'</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100025</span>;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> m, n, T;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; m) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; v(m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;[x, y]: v) <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; T;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; bulb(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> &amp;x: bulb) <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; seg(m, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">0</span>, n));</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> better = [](pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; b, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; c) &#123;</span><br><span class="line">                pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; AB(b.first-a.first, b.second-a.second);</span><br><span class="line">                pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; BC(c.first-b.first, c.second-b.second);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1L</span>L * AB.first * BC.second - <span class="number">1L</span>L * BC.first * AB.second &gt; <span class="number">0</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; stk;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">                <span class="keyword">while</span>(stk.size() &gt;= <span class="number">2</span> &amp;&amp; better(stk[stk.size()<span class="number">-2</span>], stk[stk.size()<span class="number">-1</span>], v[i]))</span><br><span class="line">                    stk.pop_back();</span><br><span class="line">                <span class="keyword">if</span>(stk.size() &amp;&amp; stk.back().second &gt; v[i].second) &#123;</span><br><span class="line">                    <span class="keyword">double</span> x = v[i].first + (T - v[i].second) * (stk.back().first - v[i].first) / <span class="keyword">double</span>(stk.back().second - v[i].second);</span><br><span class="line">                    seg[i].first = upper_bound(bulb.begin(), bulb.end(), x) - bulb.begin();</span><br><span class="line">                &#125;</span><br><span class="line">                stk.push_back(v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> better = [](pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; b, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; c) &#123;</span><br><span class="line">                pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; AB(b.first-a.first, b.second-a.second);</span><br><span class="line">                pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; BC(c.first-b.first, c.second-b.second);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1L</span>L * AB.first * BC.second - <span class="number">1L</span>L * BC.first * AB.second &lt; <span class="number">0</span>;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; stk;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = m<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="keyword">while</span>(stk.size() &gt;= <span class="number">2</span> &amp;&amp; better(stk[stk.size()<span class="number">-2</span>], stk[stk.size()<span class="number">-1</span>], v[i]))</span><br><span class="line">                    stk.pop_back();</span><br><span class="line">                <span class="keyword">if</span>(stk.size() &amp;&amp; stk.back().second &gt; v[i].second) &#123;</span><br><span class="line">                    <span class="keyword">double</span> x = v[i].first + (T - v[i].second) * (stk.back().first - v[i].first) / <span class="keyword">double</span>(stk.back().second - v[i].second);</span><br><span class="line">                    seg[i].second = lower_bound(bulb.begin(), bulb.end(), x) - bulb.begin();</span><br><span class="line">                &#125;</span><br><span class="line">                stk.push_back(v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">bool</span> ok = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) <span class="keyword">if</span>(seg[i].first == seg[i].second) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"you need more bulbs!\n"</span>;</span><br><span class="line">            ok = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!ok) <span class="keyword">continue</span>;</span><br><span class="line">        sort(seg.begin(), seg.end(), [](pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; b)&#123;<span class="keyword">return</span> a.second &lt; b.second;&#125;);</span><br><span class="line">        <span class="keyword">int</span> last = <span class="number">-1</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> [l, r]: seg) &#123;</span><br><span class="line">            <span class="keyword">if</span>(l &gt;= last) &#123;</span><br><span class="line">                last = r;</span><br><span class="line">                ++ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#照亮的山景"><span class="toc-number">1.</span> <span class="toc-text">照亮的山景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&text=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&is_video=false&description=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1404&body=Check out this article: https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&title=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&name=TIOJ-1404&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/05/04/TIOJ-1404/&t=TIOJ-1404" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Bing-Hsuan, Lin
+  </div>
+
+  <!-- <a id="cmatrix-toggle"></a> -->
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-153846761-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'omeletwithoutegg';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<!-- canvas nest animation -->
+
+<!-- <script type="text/javascript" src="/lib/cmatrix/cmatrix.js"></script> -->
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+  count=100
+  color="0,200,100"
+  opacity=0.25
+>
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
