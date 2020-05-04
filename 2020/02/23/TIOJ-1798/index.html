@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Can You Arrive?https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1798 Description地鐵有$N$個站，$M$條軌道，$K$段行駛路線站與站之間使用軌道連接保證軌道不會形成環，且$M &#x3D; N-1$ 每段行駛路線代表有一輛車在兩站之間的最短路徑來回發車也就是說這段路上的任意兩站都是互通的，可以直接抵達不需轉車 現在$Q$位妹子來向你問路，問你能不能從某一">
-<meta name="keywords" content="TIOJ,data-structure,tree">
+<meta name="keywords" content="data-structure,TIOJ,tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1798">
 <meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;02&#x2F;23&#x2F;TIOJ-1798&#x2F;index.html">
@@ -49,8 +49,7 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -315,7 +314,25 @@
   color="0,200,100"
   opacity=0.25
 >
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

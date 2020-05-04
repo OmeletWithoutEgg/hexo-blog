@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Assssss!!https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1505 Description現在有一個正整數構成的除法數列 $x_1 &#x2F; x_2 &#x2F; x_3 &#x2F; \dots &#x2F; x_n$ 請問是否有一種加上括號的方法使得最後運算的結果是整數?$2 \leq n \leq 10^5, 1 \leq x_i \leq 10^9$ Solution加上括號之後每個數字會被放到">
-<meta name="keywords" content="TIOJ,math">
+<meta name="keywords" content="math,TIOJ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1505">
 <meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;TIOJ-1505&#x2F;index.html">
@@ -49,8 +49,7 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -316,7 +315,25 @@
   color="0,200,100"
   opacity=0.25
 >
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
