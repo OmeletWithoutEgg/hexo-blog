@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="B.魔術數字https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1039 Description超級長orz總之名次的比較是看勝率，勝率的定義是「勝場數&#x2F;(勝場數+敗場數)」而兩隊魔術數字$M$的定義如下：假設A隊的勝率領先B隊，只要A隊再贏除了B隊以外的隊伍$M$場，就算$B$隊剩下的所有場次都贏也不能得到和A相等的勝率假設$M$大於A隊對上除了B隊以外的隊伍剩下的場次，那我們">
+<meta name="keywords" content="TIOJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TIOJ-1039">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;05&#x2F;06&#x2F;TIOJ-1039&#x2F;index.html">
+<meta property="og:site_name" content="蛋餅的競程隨筆">
+<meta property="og:description" content="B.魔術數字https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1039 Description超級長orz總之名次的比較是看勝率，勝率的定義是「勝場數&#x2F;(勝場數+敗場數)」而兩隊魔術數字$M$的定義如下：假設A隊的勝率領先B隊，只要A隊再贏除了B隊以外的隊伍$M$場，就算$B$隊剩下的所有場次都贏也不能得到和A相等的勝率假設$M$大於A隊對上除了B隊以外的隊伍剩下的場次，那我們">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-05-08T04:08:51.522Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>TIOJ-1039</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+    <!-- google-site-verification -->
+    <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/05/07/TOI-2!/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/05/04/TIOJ-1404/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&text=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&is_video=false&description=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1039&body=Check out this article: https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&name=TIOJ-1039&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&t=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B-魔術數字"><span class="toc-number">1.</span> <span class="toc-text">B.魔術數字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        TIOJ-1039
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">蛋餅的競程隨筆</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-06T08:36:03.000Z" itemprop="datePublished">2020-05-06</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIOJ/" rel="tag">TIOJ</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="B-魔術數字"><a href="#B-魔術數字" class="headerlink" title="B.魔術數字"></a>B.魔術數字</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1039" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1039</a></p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>超級長orz<br>總之名次的比較是看勝率，勝率的定義是「勝場數/(勝場數+敗場數)」<br>而兩隊魔術數字$M$的定義如下：<br>假設A隊的勝率領先B隊，只要A隊再贏除了B隊以外的隊伍$M$場，就算$B$隊剩下的所有場次都贏也不能得到和A相等的勝率<br>假設$M$大於A隊對上除了B隊以外的隊伍剩下的場次，那我們說A隊對B隊的魔術數字尚未點亮<br>否則我們說A隊對B隊的魔術數字是$M$<br>如果$M$歸零的話，表示A隊不管怎麼樣名次都會超過B隊</p>
+<p>對於每一筆測試資料，請輸出一排版過的戰績表。依n支球隊的戰績排名順序輸出n行。除了第1名球隊以外，若發生勝率相同的情形，請依球隊在原資料的出現順序為輸出順序，但其排名則應並列。格式請參考範例輸出。隊名，勝率，魔術數字分別以一個空格來間隔，而隊名部分不足9個字元的部分則需填入空格。勝率固定輸出到小數點後三位(四捨五入)。第一名球隊不需要輸出魔術數字，請你分別計算出第一名球隊對其他球隊的魔術數字。若對其他球隊的魔術數字尚未點亮，請輸出<code>--</code>。若魔術數字已點亮，則輸出<code>M</code>以及該數字。測試資料之間請留一個空行。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>呃…就是一大堆噁心輸出<br>注意勝率的定義不包括和局QQ<br>計算魔術數字的方法就是用while迴圈一直加，跑到在題敘指定的情況下A隊的勝率會大於B隊的勝率<br>噢名次的地方也是要注意QQ很容易沒注意就寫錯<br>還有他的空行是在測試資料<strong>之間</strong>(?)雖然我不知道有沒有差啦</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Team</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> W, T, L, id;</span><br><span class="line">    <span class="keyword">double</span> rate;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Team &amp;a, <span class="keyword">const</span> Team &amp;b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a.rate != b.rate ? a.rate &gt; b.rate : a.id &lt; b.id;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; t[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> rest[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, g;</span><br><span class="line">    <span class="keyword">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;g), n || g) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!first) <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">        first = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%s%d%d%d"</span>, t[i].name, &amp;t[i].W, &amp;t[i].T, &amp;t[i].L);</span><br><span class="line">            t[i].id = i;</span><br><span class="line">            t[i].rate = t[i].W / <span class="keyword">double</span>(t[i].W+t[i].L);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;rest[i][j]);</span><br><span class="line">        <span class="built_in">std</span>::sort(t, t+n);</span><br><span class="line">        <span class="keyword">int</span> rk = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">double</span> last = <span class="number">7122</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(t[i].rate != last) rk = i+<span class="number">1</span>;</span><br><span class="line">            last = t[i].rate;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d:%-9s %.3f"</span>, rk, t[i].name, round(t[i].rate * <span class="number">1000</span>) / <span class="number">1000</span>);</span><br><span class="line">            <span class="keyword">if</span>(i) &#123;</span><br><span class="line">                <span class="keyword">int</span> magic = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>((t[<span class="number">0</span>].W + magic) / <span class="keyword">double</span>(g - t[<span class="number">0</span>].T) &lt;= (g - t[i].T - t[i].L) / <span class="keyword">double</span>(g - t[i].T)) ++magic;</span><br><span class="line">                <span class="keyword">if</span>(magic &lt;= g - (t[<span class="number">0</span>].W+t[<span class="number">0</span>].T+t[<span class="number">0</span>].L) - rest[t[<span class="number">0</span>].id][t[i].id])</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">" M%d"</span>, magic);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">" --"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B-魔術數字"><span class="toc-number">1.</span> <span class="toc-text">B.魔術數字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solution"><span class="toc-number">1.2.</span> <span class="toc-text">Solution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AC-code"><span class="toc-number">1.3.</span> <span class="toc-text">AC code</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&text=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&is_video=false&description=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1039&body=Check out this article: https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&title=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&name=TIOJ-1039&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/05/06/TIOJ-1039/&t=TIOJ-1039" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Bing-Hsuan, Lin
+  </div>
+
+  <!-- <a id="cmatrix-toggle"></a> -->
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Articles</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-153846761-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'omeletwithoutegg';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<!-- canvas nest animation -->
+
+<!-- <script type="text/javascript" src="/lib/cmatrix/cmatrix.js"></script> -->
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"
+  count=100
+  color="0,200,100"
+  opacity=0.25
+>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
