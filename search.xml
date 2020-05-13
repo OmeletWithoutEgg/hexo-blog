@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>TIOJ-1764</title>
+      <link href="/2020/05/12/TIOJ-1764/"/>
+      <url>/2020/05/12/TIOJ-1764/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Ch2-Section-9-補魔力的條件"><a href="#Ch2-Section-9-補魔力的條件" class="headerlink" title="Ch2. Section 9. 補魔力的條件"></a>Ch2. Section 9. 補魔力的條件</h1><p><a href="https://tioj.ck.tp.edu.tw/problems/1764" target="_blank" rel="noopener">https://tioj.ck.tp.edu.tw/problems/1764</a></p><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><ul><li>現在有排成一直線的$N$個格子，從左到右編號為$1 \dots N$，每個格子都有自己的高度</li><li>一開始你站在第一格，每次移動都只能往編號大的格子跳，目標是走到第$N$格</li><li>假設第$i$個格子的高度是$x_i$，從格子$i$跳到格子$j$需要耗費$\max(0, (j-i)+(x_j-x_i))$的力氣<br>請問在花最少力氣到達終點的前提下，他最多可以跳幾次?</li></ul><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先考慮最小化力氣<br>令$x_i+i = v_i$，簡單的列出DP式</p><script type="math/tex; mode=display">dp[i] = \min_{j < i}(dp[j] + \max(0,v_j-v_i))</script><p>這樣的複雜度是$\mathcal{O}(N^2)$<br>不過可以分case討論</p><script type="math/tex; mode=display">dp[i] = \min(    \min_{j < i \wedge v_j \geq v_i}(dp[j]+v_j)-v_i,    \min_{j < i \wedge v_j < v_i}(dp[j]))</script><p>就可以用資料結構$\mathcal{O}(N \log N)$維護了<br>那麼最多可以跳的次數也可以一邊維護<br>也就是說如果力氣不同就選力氣小的，力氣相同則選跳的次數多的，可以直接用pair做就好<br>這邊寫的是值域壓縮之後用BIT維護前後綴min OAO</p><h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> loop_opt(on)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ff first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ss second</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int64_t</span> ll;</span><br><span class="line"><span class="keyword">constexpr</span> ll N = <span class="number">300025</span>, INF = <span class="number">1e18</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BIT</span> &#123;</span></span><br><span class="line">    pair&lt;ll,<span class="keyword">int</span>&gt; mn[N];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> _n)</span> </span>&#123;</span><br><span class="line">        n = _n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) mn[i] = &#123;INF, <span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">edit</span><span class="params">(<span class="keyword">int</span> p, pair&lt;ll,<span class="keyword">int</span>&gt; d)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(; p &lt;= n; p += p&amp;-p) mn[p] = min(mn[p], d);</span><br><span class="line">    &#125;</span><br><span class="line">    pair&lt;ll,<span class="keyword">int</span>&gt; query(<span class="keyword">int</span> p) &#123;</span><br><span class="line">        pair&lt;ll,<span class="keyword">int</span>&gt; res = &#123;INF, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(; p &gt; <span class="number">0</span>; p -= p&amp;-p) res = min(res, mn[p]);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; pre, suf;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// dp[i] = min&#123;dp[j] + max(v[i] - v[j], 0)&#125;;</span></span><br><span class="line">    <span class="comment">// dp[i] = min&#123;v[i] + dp[j]-v[j] | v[i] &gt;= v[j]&#125;, min&#123;dp[j] | v[i] &lt; v[j]&#125;</span></span><br><span class="line">    <span class="comment">// dp[1] = &#123;0, 0&#125;</span></span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; h(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> &amp;x: h) <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; u = h;</span><br><span class="line">    sort(u.begin(), u.end()), u.erase(unique(u.begin(), u.end()), u.end());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> &amp;x: h) x = lower_bound(u.begin(), u.end(), x) - u.begin() + <span class="number">1</span>;</span><br><span class="line">    pre.init(u.size());</span><br><span class="line">    suf.init(u.size());</span><br><span class="line">    pre.edit(h[<span class="number">0</span>], &#123;-h[<span class="number">0</span>], <span class="number">0</span>&#125;);</span><br><span class="line">    suf.edit(u.size()+<span class="number">1</span>-h[<span class="number">0</span>], &#123;<span class="number">0</span>, <span class="number">0</span>&#125;);</span><br><span class="line">    pair&lt;ll,<span class="keyword">int</span>&gt; dp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        pair&lt;ll,<span class="keyword">int</span>&gt; a = pre.query(h[i]), b = suf.query(u.size()-h[i]);</span><br><span class="line">        a.ff += h[i];</span><br><span class="line">        dp = min(a,b);</span><br><span class="line">        dp.ss -= <span class="number">1</span>;</span><br><span class="line">        suf.edit(u.size()+<span class="number">1</span>-h[i], dp);</span><br><span class="line">        dp.ff -= h[i];</span><br><span class="line">        pre.edit(h[i], dp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; min(m, -dp.ss) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> data-structure </tag>
+            
+            <tag> TIOJ </tag>
+            
+            <tag> dp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TIOJ-1633</title>
       <link href="/2020/05/08/TIOJ-1633/"/>
       <url>/2020/05/08/TIOJ-1633/</url>
@@ -77,9 +100,9 @@
             
             <tag> TIOJ </tag>
             
-            <tag> greedy </tag>
-            
             <tag> geometry </tag>
+            
+            <tag> greedy </tag>
             
         </tags>
       
@@ -182,9 +205,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -203,9 +226,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -413,9 +436,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -474,9 +497,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -797,9 +820,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -818,9 +841,9 @@
       
         <tags>
             
-            <tag> FFT </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> FFT </tag>
             
         </tags>
       
@@ -929,9 +952,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -994,9 +1017,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -1038,9 +1061,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
             <tag> suffix-array </tag>
             
@@ -1084,9 +1107,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -1151,9 +1174,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
             <tag> matrix </tag>
             
@@ -1176,9 +1199,9 @@
             
             <tag> data-structure </tag>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
