@@ -4,7 +4,20 @@
   
     
     <entry>
-      <title>TOI-2020-7-18-weekend</title>
+      <title>國培 week 2</title>
+      <link href="/2020/08/05/TOI-2020-7-26-weekend/"/>
+      <url>/2020/08/05/TOI-2020-7-26-weekend/</url>
+      
+        <content type="html"><![CDATA[<h1 id="國培第二周"><a href="#國培第二周" class="headerlink" title="國培第二周"></a>國培第二周</h1><p>原本的課是在周六和周日的上午<br>似乎因為需要電力檢修還是什麼的都被移到周日了</p><h2 id="週日"><a href="#週日" class="headerlink" title="週日"></a>週日</h2><p>上課的教授是王柄豐，他都會先丟給我們一些題目然後過幾個小時再來叫我們上台<br>原本是兩天各三題ICPC final的題目，不過全都被移到周日總共是六題<br>我也忘記他丟哪些題目了，不過我記得我早上上去講一個rerooting+分塊凸包優化的算法之後就被重剖作法電爆了QQ<br>下午我找到一題最短路去講，後來以為只會經過一條邊不用跑最短路，結果被教授抓到假解XD不過只要跑最短路應該是對的</p><p>教授也跟我們說，上他的課想到一個做法不一定要急著實作出來，只要把想法確認好就好<br>花了整個早上實作分塊凸包優化的我直接中槍QQ</p><h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>中午第一次在國培吃便當XDD 好油(?)<br>之前都是吃拉麵(#<br>另外我們這禮拜有配飯吃看動畫，油上加油呢<br>看了RE:0、魔王什麼的、史萊姆，還有格里爾的賢者時間XD，超污</p><p><img src="/images/TOI-2020-7-26-weekend/emilia.JPG" alt="404 QQ"></p><p>晚上跑去吃山嵐，第一次點赤湯，沒想到意外的不那麼辣，看起來明明是全紅的www<br>然後東東曹宸睿好像要趕去報到AIS3就散會ㄌ</p><p><img src="/images/TOI-2020-7-26-weekend/ramen.JPG" alt="404 QQ"><br><img src="/images/TOI-2020-7-26-weekend/eat.JPG" alt="404 QQ"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>國培 week 1</title>
       <link href="/2020/07/20/TOI-2020-7-18-weekend/"/>
       <url>/2020/07/20/TOI-2020-7-18-weekend/</url>
       
@@ -40,9 +53,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
             <tag> dp </tag>
             
@@ -63,9 +76,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
@@ -126,9 +139,9 @@
             
             <tag> TIOJ </tag>
             
-            <tag> geometry </tag>
-            
             <tag> greedy </tag>
+            
+            <tag> geometry </tag>
             
         </tags>
       
@@ -273,9 +286,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
@@ -315,9 +328,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
             <tag> tree </tag>
             
@@ -359,9 +372,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
             <tag> splay-tree </tag>
             
@@ -483,9 +496,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
@@ -588,9 +601,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
@@ -632,9 +645,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
             <tag> greedy </tag>
             
@@ -957,9 +970,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
@@ -999,9 +1012,9 @@
       
         <tags>
             
-            <tag> template </tag>
-            
             <tag> tutorial </tag>
+            
+            <tag> template </tag>
             
             <tag> data-structure </tag>
             
@@ -1064,9 +1077,9 @@
       
         <tags>
             
-            <tag> template </tag>
-            
             <tag> tutorial </tag>
+            
+            <tag> template </tag>
             
             <tag> fread </tag>
             
@@ -1154,9 +1167,9 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
             <tag> tree </tag>
             
@@ -1179,9 +1192,9 @@
             
             <tag> TIOJ </tag>
             
-            <tag> dp </tag>
-            
             <tag> bitmask </tag>
+            
+            <tag> dp </tag>
             
         </tags>
       
@@ -1223,11 +1236,11 @@
       
         <tags>
             
-            <tag> data-structure </tag>
-            
             <tag> math </tag>
             
             <tag> TIOJ </tag>
+            
+            <tag> data-structure </tag>
             
         </tags>
       
