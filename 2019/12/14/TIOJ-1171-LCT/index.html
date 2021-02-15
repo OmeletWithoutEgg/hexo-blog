@@ -7,7 +7,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="動態樹的奮鬥為了這題的Link-Cut-Tree解我花了不只一整天XD壓常實在是神奇的事，把 long long 改成 int 再加上幾個 pragma 終於成功壓過唯一奇怪的那筆&#x3D; &#x3D;而且 push 竟然還不能用遞迴寫，到底三小LCT怎麼這麼可撥XD不過壓過去那筆之後其他筆的執行時間加起來超少，值得了 註: 模板是參考日月卦長那裡的，大概不會有時間會為這篇補上解說吧，大家自己google 123">
-<meta name="keywords" content="template,tree,link-cut-tree">
+<meta name="keywords" content="tree,template,link-cut-tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1171-LCT">
 <meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;hexo-blog&#x2F;2019&#x2F;12&#x2F;14&#x2F;TIOJ-1171-LCT&#x2F;index.html">
@@ -49,8 +49,7 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -285,7 +284,25 @@
   color="0,200,100"
   opacity=0.25
 >
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

@@ -17,6 +17,13 @@
     </url>
 
     <url>
+        <loc>https://omeletwithoutegg.github.io/hexo-blog/tags/template/</loc>
+        <lastmod>2020-06-13T06:12:16.276Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://omeletwithoutegg.github.io/hexo-blog/tags/data-structure/</loc>
         <lastmod>2020-06-13T06:12:16.276Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +32,6 @@
 
     <url>
         <loc>https://omeletwithoutegg.github.io/hexo-blog/tags/tutorial/</loc>
-        <lastmod>2020-06-13T06:12:16.276Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://omeletwithoutegg.github.io/hexo-blog/tags/template/</loc>
         <lastmod>2020-06-13T06:12:16.276Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
