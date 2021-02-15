@@ -49,7 +49,8 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -162,12 +163,6 @@ dp[i] = \min \{dp[j] + \min(a_i, b_j)\} = \min(\min\{dp[j]\}+a_i, \min \{dp[j]+b
 <h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ff first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ss second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb emplace_back</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int64_t</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10000025</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, k, L;</span><br><span class="line"><span class="keyword">int</span> p[N];</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; L;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; p[i];</span><br><span class="line">    ll dp = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">deque</span>&lt;pair&lt;<span class="keyword">int</span>,ll&gt;&gt; dq[<span class="number">2</span>];</span><br><span class="line">    dq[<span class="number">0</span>].pb(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    dq[<span class="number">1</span>].pb(<span class="number">0</span>, <span class="number">2</span>*(L-p[<span class="number">1</span>]));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">/*dp[i] = INF;</span></span><br><span class="line"><span class="comment">        for(int j = max(0, i-k); j &lt; i; j++) &#123;</span></span><br><span class="line"><span class="comment">            dp[i] = min(dp[i], dp[j] + min(&#123;L, 2*v[i], 2*(L-v[j+1])&#125;));</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">        <span class="keyword">while</span>(dq[<span class="number">0</span>].front().ff &lt; i-k) dq[<span class="number">0</span>].pop_front();</span><br><span class="line">        <span class="keyword">while</span>(dq[<span class="number">1</span>].front().ff &lt; i-k) dq[<span class="number">1</span>].pop_front();</span><br><span class="line">        dp = min(dq[<span class="number">0</span>].front().ss+min(L,<span class="number">2</span>*p[i]), dq[<span class="number">1</span>].front().ss);</span><br><span class="line">        <span class="keyword">while</span>(dq[<span class="number">0</span>].size() &amp;&amp; dq[<span class="number">0</span>].back().ss &gt;= dp) dq[<span class="number">0</span>].pop_back();</span><br><span class="line">        <span class="keyword">while</span>(dq[<span class="number">1</span>].size() &amp;&amp; dq[<span class="number">1</span>].back().ss &gt;= dp+<span class="number">2</span>*(L-p[i+<span class="number">1</span>])) dq[<span class="number">1</span>].pop_back();</span><br><span class="line">        dq[<span class="number">0</span>].pb(i, dp);</span><br><span class="line">        dq[<span class="number">1</span>].pb(i, dp+<span class="number">2</span>*(L-p[i+<span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        dp[i] = min(dp[j] + min(L, 2*v[i], 2*(L-v[j]));</span></span><br><span class="line"><span class="comment">        dp[i] = min(dp[j] + min(a[i], b[j])) = min(min(dp[j])+a[i], min(dp[j]+b[j]));</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--) <span class="built_in">cout</span> &lt;&lt; solve() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </article>
-
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </div>
 
 
 
@@ -284,30 +279,9 @@ dp[i] = \min \{dp[j] + \min(a_i, b_j)\} = \min(\min\{dp[j]\}+a_i, \min \{dp[j]+b
 
 <!-- Google Analytics -->
 
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-153846761-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
 <!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'omeletwithoutegg';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
 
 
 <!-- canvas nest animation -->
@@ -318,25 +292,7 @@ dp[i] = \min \{dp[j] + \min(a_i, b_j)\} = \min(\min\{dp[j]\}+a_i, \min \{dp[j]+b
   color="0,200,100"
   opacity=0.25
 >
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

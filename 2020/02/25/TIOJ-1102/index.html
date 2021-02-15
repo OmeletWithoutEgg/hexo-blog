@@ -49,7 +49,8 @@
     <meta name="google-site-verification" content="4F9jYRq8d0CfuoXLojSMhGbJPqJv4_x0TUoungg5UqA" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -155,12 +156,6 @@
 <h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   __________________</span></span><br><span class="line"><span class="comment">//  | ________________ |</span></span><br><span class="line"><span class="comment">//  ||          ____  ||</span></span><br><span class="line"><span class="comment">//  ||   /\    |      ||</span></span><br><span class="line"><span class="comment">//  ||  /__\   |      ||</span></span><br><span class="line"><span class="comment">//  || /    \  |____  ||</span></span><br><span class="line"><span class="comment">//  ||________________||</span></span><br><span class="line"><span class="comment">//  |__________________|</span></span><br><span class="line"><span class="comment">//  \###################\</span></span><br><span class="line"><span class="comment">//   \###################\</span></span><br><span class="line"><span class="comment">//    \        ____       \</span></span><br><span class="line"><span class="comment">//     \_______\___\_______\</span></span><br><span class="line"><span class="comment">// An AC a day keeps the doctor away.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> g++ optimize(<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> loop_opt(on)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/extc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> local</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) (cerr&lt;&lt;#x&lt;&lt;<span class="meta-string">" = "</span>&lt;&lt;(x)&lt;&lt;<span class="meta-string">'\n'</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(x) ((void)0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// local</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> all(v) begin(v),end(v)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> siz(v) (ll(v.size()))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> get_pos(v,x) (lower_bound(all(v),x)-begin(v))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sort_uni(v) sort(begin(v),end(v)),v.erase(unique(begin(v),end(v)),end(v))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ff first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ss second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem(v,x) memset(v,x,sizeof v)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_pbds;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int64_t</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ll,ll&gt; pll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;ld,ld&gt; pld;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using</span> max_heap = <span class="built_in">std</span>::priority_queue&lt;T,<span class="built_in">vector</span>&lt;T&gt;,less&lt;T&gt; &gt;;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using</span> min_heap = <span class="built_in">std</span>::priority_queue&lt;T,<span class="built_in">vector</span>&lt;T&gt;,greater&lt;T&gt; &gt;;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">using</span> rbt = tree&lt;T,null_type,less&lt;T&gt;,rb_tree_tag,tree_order_statistics_node_update&gt;;</span><br><span class="line"><span class="keyword">constexpr</span> ld PI = <span class="built_in">acos</span>(<span class="number">-1</span>), eps = <span class="number">1e-11</span>;</span><br><span class="line"><span class="keyword">constexpr</span> ll N = <span class="number">100025</span>, INF = <span class="number">1e18</span>, MOD = <span class="number">1000000007</span>, K = <span class="number">146</span>, inf = <span class="number">1e9</span>;</span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">inline</span> ll <span class="title">cdiv</span><span class="params">(ll x, ll m)</span> </span>&#123; <span class="keyword">return</span> x/m + ((x&lt;<span class="number">0</span> ^ m&gt;<span class="number">0</span>) &amp;&amp; (x%m)); &#125; <span class="comment">// ceiling divide</span></span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">inline</span> ll <span class="title">modpow</span><span class="params">(ll e,ll p,ll m=MOD)</span> </span>&#123;ll r=<span class="number">1</span>; <span class="keyword">for</span>(e%=m;p;p&gt;&gt;=<span class="number">1</span>,e=e*e%m) <span class="keyword">if</span>(p&amp;<span class="number">1</span>) r=r*e%m; <span class="keyword">return</span> r;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> r1, r2, n, L, p[N], v[N], dp[N][<span class="number">2</span>], mx[N][<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="number">0</span>), <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; r1 &gt;&gt; r2 &gt;&gt; n &gt;&gt; L, r1) &#123;</span><br><span class="line">        L += n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">cin</span> &gt;&gt; p[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) v[i] = p[i]-p[i<span class="number">-1</span>] - <span class="number">1</span>;</span><br><span class="line">        v[n] = p[<span class="number">0</span>]+L-p[n<span class="number">-1</span>] - <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>][<span class="number">0</span>] = mx[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>][<span class="number">1</span>] = mx[<span class="number">1</span>][<span class="number">1</span>] = v[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = mx[i<span class="number">-2</span>][<span class="number">0</span>] + v[i];</span><br><span class="line">            dp[i][<span class="number">1</span>] = mx[i<span class="number">-2</span>][<span class="number">1</span>] + v[i];</span><br><span class="line">            mx[i][<span class="number">0</span>] = max(mx[i<span class="number">-1</span>][<span class="number">0</span>], dp[i][<span class="number">0</span>]);</span><br><span class="line">            mx[i][<span class="number">1</span>] = max(mx[i<span class="number">-1</span>][<span class="number">1</span>], dp[i][<span class="number">1</span>]);</span><br><span class="line">            ans = max(ans, dp[i][<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">if</span>(i != n) ans = max(ans, dp[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </article>
-
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </div>
 
 
 
@@ -277,30 +272,9 @@
 
 <!-- Google Analytics -->
 
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-153846761-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-
 <!-- Baidu Analytics -->
 
 <!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'omeletwithoutegg';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
 
 
 <!-- canvas nest animation -->
@@ -311,25 +285,7 @@
   color="0,200,100"
   opacity=0.25
 >
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!--
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
