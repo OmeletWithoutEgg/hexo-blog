@@ -7,10 +7,10 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="迭代式線段樹先備知識: 線段樹(帶懶標) + 位元運算(吧)如果讀者還不知道線段樹的原理最好看遞迴的(?) 單點修改例題仍然是萬年RMQ  給定一個長度$n$的序列，請支援以下操作  將位置$p$的值改為$x$ 查詢區間$[l,r)$的最大值   完美二元樹首先假定$n$是2的冪次，思考可能可以簡單一些我們一樣用1當根，並且節點i的左右子樹會是i*2和i*2+1或寫成i&amp;lt;&amp;lt;1, i&amp;l">
-<meta name="keywords" content="tutorial,template,data-structure">
+<meta name="keywords" content="template,tutorial,data-structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Iterative-SegmentTree">
-<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2019&#x2F;12&#x2F;07&#x2F;Iterative-SegmentTree&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;hexo-blog&#x2F;2019&#x2F;12&#x2F;07&#x2F;Iterative-SegmentTree&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="迭代式線段樹先備知識: 線段樹(帶懶標) + 位元運算(吧)如果讀者還不知道線段樹的原理最好看遞迴的(?) 單點修改例題仍然是萬年RMQ  給定一個長度$n$的序列，請支援以下操作  將位置$p$的值改為$x$ 查詢區間$[l,r)$的最大值   完美二元樹首先假定$n$是2的冪次，思考可能可以簡單一些我們一樣用1當根，並且節點i的左右子樹會是i*2和i*2+1或寫成i&amp;lt;&amp;lt;1, i&amp;l">
 <meta property="og:locale" content="en">
@@ -94,17 +94,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&text=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&is_video=false&description=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Iterative-SegmentTree&body=Check out this article: https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&name=Iterative-SegmentTree&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&t=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&text=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&is_video=false&description=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Iterative-SegmentTree&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&name=Iterative-SegmentTree&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&t=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -250,17 +250,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&text=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&is_video=false&description=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Iterative-SegmentTree&body=Check out this article: https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&name=Iterative-SegmentTree&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2019/12/07/Iterative-SegmentTree/&t=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&text=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&is_video=false&description=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Iterative-SegmentTree&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&title=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&name=Iterative-SegmentTree&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/07/Iterative-SegmentTree/&t=Iterative-SegmentTree" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -278,7 +278,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 Bing-Hsuan, Lin
+    Copyright &copy; 2021 Bing-Hsuan, Lin
   </div>
 
   <!-- <a id="cmatrix-toggle"></a> -->

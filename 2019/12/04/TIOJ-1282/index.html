@@ -7,10 +7,10 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="愛蜜利雅的作業2https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1282 Description給定一個長度$n$的正整數序列，有$q$次操作，每次操作可能會對區間$[l,r]$加上$k$或詢問區間$[l,r]$的最大公因數$1 \leq n,q \leq 10^5$ Solution想法是利用區間加值等於對差分的兩個單點修改然後有一個性質是 $\gcd(a,b) &#x3D; \gc">
-<meta name="keywords" content="data-structure,math,TIOJ">
+<meta name="keywords" content="data-structure,TIOJ,math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1282">
-<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2019&#x2F;12&#x2F;04&#x2F;TIOJ-1282&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;hexo-blog&#x2F;2019&#x2F;12&#x2F;04&#x2F;TIOJ-1282&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="愛蜜利雅的作業2https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1282 Description給定一個長度$n$的正整數序列，有$q$次操作，每次操作可能會對區間$[l,r]$加上$k$或詢問區間$[l,r]$的最大公因數$1 \leq n,q \leq 10^5$ Solution想法是利用區間加值等於對差分的兩個單點修改然後有一個性質是 $\gcd(a,b) &#x3D; \gc">
 <meta property="og:locale" content="en">
@@ -77,8 +77,6 @@
         <li><a class="icon" href="/2019/12/04/TIOJ-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/12/03/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
@@ -90,17 +88,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&text=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&is_video=false&description=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TIOJ-1282&body=Check out this article: https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&name=TIOJ-1282&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&t=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&text=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&is_video=false&description=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1282&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&name=TIOJ-1282&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&t=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -193,17 +191,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&text=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&is_video=false&description=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TIOJ-1282&body=Check out this article: https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&name=TIOJ-1282&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2019/12/04/TIOJ-1282/&t=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&text=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&is_video=false&description=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1282&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&title=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&name=TIOJ-1282&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2019/12/04/TIOJ-1282/&t=TIOJ-1282" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -221,7 +219,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 Bing-Hsuan, Lin
+    Copyright &copy; 2021 Bing-Hsuan, Lin
   </div>
 
   <!-- <a id="cmatrix-toggle"></a> -->

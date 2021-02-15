@@ -10,7 +10,7 @@
 <meta name="keywords" content="TIOJ,dsu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TIOJ-1129">
-<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;2020&#x2F;02&#x2F;23&#x2F;TIOJ-1129&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;omeletwithoutegg.github.io&#x2F;hexo-blog&#x2F;2020&#x2F;02&#x2F;23&#x2F;TIOJ-1129&#x2F;index.html">
 <meta property="og:site_name" content="蛋餅的競程隨筆">
 <meta property="og:description" content="聚集問題https:&#x2F;&#x2F;tioj.ck.tp.edu.tw&#x2F;problems&#x2F;1129 Description給定二維平面上$N$個點，若編號$i,j$的點之間的距離不大於$C$則他們之間有連邊問最後的連通塊數量以及每個連通塊的大小 Solution我想不到比$\mathcal{O}(N^2)$枚舉直接連邊更好的解了XD比起DFS我更喜歡用DSU因此code是DSU AC code12345678">
 <meta property="og:locale" content="en">
@@ -90,17 +90,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&text=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&is_video=false&description=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TIOJ-1129&body=Check out this article: https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&name=TIOJ-1129&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&t=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&text=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&is_video=false&description=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1129&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&name=TIOJ-1129&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&t=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -190,17 +190,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&text=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&is_video=false&description=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=TIOJ-1129&body=Check out this article: https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&name=TIOJ-1129&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/2020/02/23/TIOJ-1129/&t=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&text=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&is_video=false&description=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=TIOJ-1129&body=Check out this article: https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&title=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&name=TIOJ-1129&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://omeletwithoutegg.github.io/hexo-blog/2020/02/23/TIOJ-1129/&t=TIOJ-1129" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -218,7 +218,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2020 Bing-Hsuan, Lin
+    Copyright &copy; 2021 Bing-Hsuan, Lin
   </div>
 
   <!-- <a id="cmatrix-toggle"></a> -->

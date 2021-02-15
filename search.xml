@@ -244,9 +244,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -265,9 +265,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -475,9 +475,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -536,9 +536,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -627,6 +627,27 @@
             <tag> bitmask </tag>
             
             <tag> linear-algebra </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/01/15/hello-world/"/>
+      <url>/2020/01/15/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>這是一篇測試用的文章<br>A quick brown fox jumps over the lazy dog.</p><blockquote><p>引用文字</p></blockquote><h1 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h1><h2 id="二級標題"><a href="#二級標題" class="headerlink" title="二級標題"></a>二級標題</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello hexo"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo s -g</span><br><span class="line">$ <span class="built_in">echo</span> 7122</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
@@ -859,9 +880,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -991,9 +1012,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -1012,9 +1033,9 @@
       
         <tags>
             
-            <tag> tutorial </tag>
-            
             <tag> template </tag>
+            
+            <tag> tutorial </tag>
             
             <tag> data-structure </tag>
             
@@ -1056,9 +1077,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -1077,9 +1098,9 @@
       
         <tags>
             
-            <tag> tutorial </tag>
-            
             <tag> template </tag>
+            
+            <tag> tutorial </tag>
             
             <tag> fread </tag>
             
@@ -1100,9 +1121,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
             <tag> suffix-array </tag>
             
@@ -1146,9 +1167,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -1213,9 +1234,9 @@
       
         <tags>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
+            
+            <tag> math </tag>
             
             <tag> matrix </tag>
             
@@ -1238,30 +1259,9 @@
             
             <tag> data-structure </tag>
             
-            <tag> math </tag>
-            
             <tag> TIOJ </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/12/03/hello-world/"/>
-      <url>/2019/12/03/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>這是一篇測試用的文章<br>A quick brown fox jumps over the lazy dog.</p><blockquote><p>引用文字</p></blockquote><h1 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h1><h2 id="二級標題"><a href="#二級標題" class="headerlink" title="二級標題"></a>二級標題</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello hexo"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo s -g</span><br><span class="line">$ <span class="built_in">echo</span> 7122</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> hexo </tag>
-            
-            <tag> blog </tag>
+            <tag> math </tag>
             
         </tags>
       
